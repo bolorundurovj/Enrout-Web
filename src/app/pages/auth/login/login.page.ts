@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '@lib/services';
+import {CommonModule} from '@angular/common';
+import {Component} from '@angular/core';
+import {ActivatedRoute, Router, RouterModule} from '@angular/router';
+import {AuthService} from '@lib/services';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.css'],
 })
