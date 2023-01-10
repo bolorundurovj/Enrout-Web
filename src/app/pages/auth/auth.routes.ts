@@ -1,4 +1,4 @@
-import { Route } from '@angular/router';
+import {Route} from '@angular/router';
 
 export const ROUTES: Route[] = [
   {
@@ -15,5 +15,10 @@ export const ROUTES: Route[] = [
     path: 'forgot-password',
     title: 'Forgot Password',
     loadComponent: async () => (await import('./forgot-password/forgot-password.component')).ForgotPasswordComponent,
+  },
+  {
+    path: 'reset-password',
+    title: 'Reset Password',
+    loadComponent: async () => (await import('./reset-password/reset-password.component')).ResetPasswordComponent,
   },
 ];
