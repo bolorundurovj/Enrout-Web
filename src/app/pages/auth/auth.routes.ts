@@ -11,4 +11,9 @@ export const ROUTES: Route[] = [
     title: 'Register',
     loadComponent: async () => (await import('./register/register.page')).RegisterPage,
   },
+  {
+    path: 'forgot-password',
+    title: 'Forgot Password',
+    loadComponent: async () => (await import('./forgot-password/forgot-password.component')).ForgotPasswordComponent,
+  },
 ];
