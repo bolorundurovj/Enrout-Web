@@ -9,7 +9,7 @@ import {Subject, takeUntil} from "rxjs";
   imports: [CommonModule, RouterModule],
   selector: 'app-demo',
   templateUrl: './demo.page.html',
-  styleUrls: ['./demo.component.css']
+  styleUrls: ['./demo.page.css']
 })
 export class DemoPage implements OnInit, OnDestroy {
 
