@@ -1,5 +1,6 @@
-import { Routes } from '@angular/router';
-import { AuthGuard, NoAuthGuard } from '@lib/guards';
+import {Routes} from '@angular/router';
+import {AuthGuard, NoAuthGuard} from '@lib/guards';
+import {StudentLayoutComponent} from "@pages/student/student-layout/student-layout.component";
 
 export const routes: Routes = [
   {
@@ -16,6 +17,11 @@ export const routes: Routes = [
     path: 'home',
     loadChildren: async () => (await import('@pages/home/home.routes')).ROUTES,
     canLoad: [AuthGuard],
+  },
+  {
+    path: 'student',
+    component: StudentLayoutComponent,
+    loadChildren: async () => (await import('@pages/student/student.routes')).ROUTES
   },
   {
     path: ':username',
