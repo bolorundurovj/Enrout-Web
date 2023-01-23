@@ -7069,6 +7069,13 @@ new-github-release-url@2.0.0:
   dependencies:
     type-fest "^2.5.1"
 
+ngx-simple-modal@^1.4.17:
+  version "1.4.17"
+  resolved "https://registry.yarnpkg.com/ngx-simple-modal/-/ngx-simple-modal-1.4.17.tgz#fc1a5bfdbce998fc21df28f2f8efe2644d2592a7"
+  integrity sha512-KhaJQ/oXv0XB31X3eXqew9NgVI3aAqd0qa7CTuO6sI8ZHXXnMbdIIXD+MYAafXZsuCGVZ9Z6lVS2NcegYqEo0w==
+  dependencies:
+    tslib "^1.9.0"
+
 nice-napi@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/nice-napi/-/nice-napi-1.0.2.tgz#dc0ab5a1eac20ce548802fc5686eaa6bc654927b"

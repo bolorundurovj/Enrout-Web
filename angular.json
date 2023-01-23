@@ -27,7 +27,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "css",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/theme/styles.css"],
+            "styles": ["src/theme/styles.css", "./node_modules/ngx-simple-modal/styles/simple-modal.css"],
             "scripts": []
           },
           "configurations": {
