@@ -26,8 +26,15 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "css",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/theme/styles.css", "./node_modules/ngx-simple-modal/styles/simple-modal.css"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/assets/fonts"
+            ],
+            "styles": [
+              "src/theme/styles.css",
+              "./node_modules/ngx-simple-modal/styles/simple-modal.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -82,15 +89,23 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/theme/styles.css"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/theme/styles.css"
+            ],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
