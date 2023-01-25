@@ -1,8 +1,13 @@
 import {CommonModule} from '@angular/common';
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterModule} from "@angular/router";
 import {UserType} from "@lib/enums/user-type";
 import {FormsModule, NgForm} from "@angular/forms";
+import {IDepartment} from "@lib/interfaces/idepartment";
+import {DepartmentService} from "@lib/services/department/department.service";
+import {PaginationParams} from "@lib/classes/pagination-params";
+import {IPaginatedMetadata} from "@lib/interfaces/ipaginated-metadata";
+import {AuthService} from "@lib/services";
 
 @Component({
   standalone: true,
@@ -10,10 +15,51 @@ import {FormsModule, NgForm} from "@angular/forms";
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.css'],
 })
-export class RegisterPage {
+export class RegisterPage implements OnInit {
   registrationMode: UserType = UserType.STUDENT;
   userType = UserType;
   isLoading = false;
+  departments: Array<IDepartment> = [];
+  pagination = new PaginationParams()
+  paginationMeta: IPaginatedMetadata = {
+    "page": 1,
+    "take": 10,
+    "itemCount": 0,
+    "pageCount": 0,
+    "hasPreviousPage": false,
+    "hasNextPage": true
+  };
+
+
+  constructor(private _deptService: DepartmentService, private _authService: AuthService) {
+    this.pagination.take = 25;
+  }
+
+  ngOnInit() {
+    this.getDepts()
+  }
+
+  getDepts() {
+    this.isLoading = true;
+    this._deptService.retrieveDepartments(this.pagination)
+      .subscribe(
+        (response) => {
+          if (response) {
+            this.departments = response.data;
+            this.paginationMeta = response.meta;
+          } else {
+            alert("An error occurred, please try again")
+          }
+        },
+        (error) => {
+          console.error(error)
+          alert(`${error.error?.error || 'An error occurred'}`);
+        },
+        () => {
+          this.isLoading = false;
+        }
+      );
+  }
 
   setUserType(type: string): void {
     switch (type) {
@@ -32,6 +78,12 @@ export class RegisterPage {
     this.isLoading = true;
     if (form.invalid) {
       return;
+    } else {
+      if (this.registrationMode === this.userType.STAFF) {
+        this._authService.registerStaff({...form.value, staffId: form.controls['universityId'].value})
+      } else {
+        this._authService.registerStudent({...form.value, matricNo: form.controls['universityId'].value})
+      }
     }
   }
 }

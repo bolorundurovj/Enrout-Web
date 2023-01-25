@@ -75,18 +75,19 @@
               class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
           <div>
             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">First name</label>
-            <input
-              #firstName='ngModel' [ngClass]="{'border-red-400': firstName.touched&&firstName.invalid}"
-              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-              ngModel
-              placeholder="John"
-              type="text"/>
+            <input #firstName='ngModel'
+                   [ngClass]="{'border-red-400': firstName.touched&&firstName.invalid}" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                   name="firstName"
+                   ngModel
+                   placeholder="John"
+                   type="text"/>
           </div>
 
           <div>
             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last name</label>
             <input #lastName='ngModel' [ngClass]="{'border-red-400': lastName.touched&&lastName.invalid}"
                    class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                   name="lastName"
                    ngModel
                    placeholder="Snow"
                    type="text"/>
@@ -94,8 +95,8 @@
 
           <div>
             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Phone number</label>
-            <input #phone='ngModel' [ngClass]="{'border-red-400': phone.touched&&phone.invalid}"
-                   class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+            <input #phone='ngModel' [ngClass]="{'border-red-400': phone.touched&&phone.invalid}" class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                   name="phone"
                    ngModel
                    placeholder="XXX-XX-XXXX-XXX"
                    type="text"/>
@@ -124,11 +125,12 @@
 
           <div>
             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200" for="email">Department</label>
-            <select #department='ngModel' [ngClass]="{'border-red-400': department.touched&&department.invalid}"
+            <select #departmentId='ngModel' [ngClass]="{'border-red-400': departmentId.touched&&departmentId.invalid}"
                     class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                    id="department" name="department" ngModel
+                    id="department" name="departmentId" ngModel
                     required>
               <option disabled selected>Select Department</option>
+              <option *ngFor="let d of departments" [value]="d.id">{{d.name}}</option>
             </select>
           </div>
 
@@ -155,8 +157,8 @@
                    type="password"/>
           </div>
 
-          <button [disabled]="registerForm.invalid" [ngClass]="{'cursor-not-allowed': registerForm.invalid}"
-                  class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+          <button [disabled]="registerForm.invalid"
+                  class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed"
                   type="submit">
             <span>Sign Up </span>
 
