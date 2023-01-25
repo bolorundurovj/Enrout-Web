@@ -32,8 +32,7 @@
               "src/assets/fonts"
             ],
             "styles": [
-              "src/theme/styles.css",
-              "./node_modules/ngx-simple-modal/styles/simple-modal.css"
+              "src/theme/styles.css"
             ],
             "scripts": []
           },
