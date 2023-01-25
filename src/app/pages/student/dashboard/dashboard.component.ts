@@ -10,6 +10,8 @@ import {PaginationParams} from "@lib/classes/pagination-params";
 import {IPaginatedMetadata} from "@lib/interfaces/ipaginated-metadata";
 import {enumAsArray, getColorMapping} from "@lib/utils/functions/function.util";
 import {DocumentState} from "@lib/enums/document-state";
+import {Notify} from "notiflix/build/notiflix-notify-aio";
+import {Confirm} from "notiflix";
 
 @Component({
   selector: 'app-dashboard',
@@ -121,13 +123,14 @@ export class DashboardComponent implements OnInit {
               if (response) {
                 this.getDocs()
                 this.showDialog = false;
+                Notify.success('Updated Successfully')
               } else {
-                alert("An error occurred, please try again")
+                Notify.failure("An error occurred, please try again")
               }
             },
             (error) => {
               console.error(error)
-              alert(`${error.error?.error || 'An error occurred'}`);
+              Notify.failure(`${error.error?.error || 'An error occurred'}`);
             },
             () => {
               this.isLoading = false;
@@ -143,14 +146,15 @@ export class DashboardComponent implements OnInit {
             (response) => {
               if (response) {
                 this.getDocs()
+                Notify.success('Created Successfully')
                 this.showDialog = false;
               } else {
-                alert("An error occurred, please try again")
+                Notify.failure("An error occurred, please try again")
               }
             },
             (error) => {
               console.error(error)
-              alert(`${error.error?.error || 'An error occurred'}`);
+              Notify.failure(`${error.error?.error || 'An error occurred'}`);
             },
             () => {
               this.isLoading = false;
@@ -178,12 +182,12 @@ export class DashboardComponent implements OnInit {
             this.documents = response.data;
             this.paginationMeta = response.meta;
           } else {
-            alert("An error occurred, please try again")
+            Notify.failure("An error occurred, please try again")
           }
         },
         (error) => {
           console.error(error)
-          alert(`${error.error?.error || 'An error occurred'}`);
+          Notify.failure(`${error.error?.error || 'An error occurred'}`);
         },
         () => {
           this.isLoading = false;
@@ -193,26 +197,38 @@ export class DashboardComponent implements OnInit {
   }
 
   deleteDoc(doc: IDocument) {
-    const res = confirm('Are you sure you want to delete this document? This action is irreversible.')
+    Confirm.show(
+      'Confirmation',
+      'Are you sure you want to delete this document? This action is irreversible.',
+      'Yes',
+      'No',
+      () => {
+        this.isLoading = true;
+        this.doc = doc;
+        this._docService.deleteSingleDocument(doc.id)
+          .subscribe((response: IDocument) => {
+            if (response) {
+              Notify.success(`Deleted ${response.title}`)
+            } else {
+              Notify.failure('An error occurred')
+            }
+          }, (error) => {
+            Notify.failure(error?.error?.error || 'An error occurred')
+          }, () => {
+            this.isLoading = false;
+            this.getDocs()
+            this.doc = null!;
+          })
+      },
+      () => {
+        Notify.info('If you say so...');
+      },
+      {
+        width: '320px',
+        borderRadius: '8px',
+      },
+    )
 
-    if (res) {
-      this.isLoading = true;
-      this.doc = doc;
-      this._docService.deleteSingleDocument(doc.id)
-        .subscribe((response) => {
-          if (response) {
-            alert(`Deleted ${response.title}`)
-          } else {
-            alert('An error occurred')
-          }
-        }, (error) => {
-          alert(error?.error?.error || 'An error occurred')
-        }, () => {
-          this.isLoading = false;
-          this.getDocs()
-          this.doc = null!;
-        })
-    }
   }
 
   cancel() {
