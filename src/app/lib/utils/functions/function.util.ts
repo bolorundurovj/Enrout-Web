@@ -3,7 +3,7 @@
  * @param {any} obj - any - The object to convert to an array.
  * @returns An array of the values of the object.
  */
-export const enumAsArray = (obj: any) => {
+export const enumAsArray = (obj: never) => {
   return Object.values(obj);
 }
 

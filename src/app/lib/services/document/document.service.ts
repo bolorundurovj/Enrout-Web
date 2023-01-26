@@ -3,13 +3,13 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "@env/environment";
 import {IDocumentPayload} from "@lib/interfaces/idocument-payload";
 import {IDocument} from "@lib/interfaces/idocument";
-import {from, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {IPaginationParams} from "@lib/interfaces/ipagination-params";
 import {IPaginatedResponse} from "@lib/interfaces/ipaginated-response";
 import {IPublishDocumentPayload} from "@lib/interfaces/ipublish-document-payload";
 
 const studentApiUrl = `${environment.apiUrl}/students/documents`;
-const staffApiUrl = `${environment.apiUrl}/staff/documents`;
+// const staffApiUrl = `${environment.apiUrl}/staff/documents`;
 
 @Injectable({
   providedIn: 'root'

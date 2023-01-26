@@ -8,8 +8,6 @@ import {IDocument} from "@lib/interfaces/idocument";
 import {DocumentService} from "@lib/services/document/document.service";
 import {PaginationParams} from "@lib/classes/pagination-params";
 import {IPaginatedMetadata} from "@lib/interfaces/ipaginated-metadata";
-import {enumAsArray, getColorMapping} from "@lib/utils/functions/function.util";
-import {DocumentState} from "@lib/enums/document-state";
 import {Notify} from 'notiflix/build/notiflix-notify-aio';
 
 @Component({
@@ -26,8 +24,6 @@ export class DashboardComponent implements OnInit {
   showDialog = false;
   documents: Array<IDocument> = [];
   isLoading = false;
-  docStages = enumAsArray(DocumentState)
-  stageColors: any = getColorMapping(this.docStages as string[])
   formMode: 'new' | 'edit' = 'new'
 
   pagination = new PaginationParams()
@@ -267,13 +263,11 @@ export class DashboardComponent implements OnInit {
       }
     }
 
-    const startIndex = (this.pagination.page - 1) * this.pagination.take;
-    const endIndex = Math.min(startIndex + this.pagination.take - 1, this.paginationMeta.pageCount - 1);
+    // const startIndex = (this.pagination.page - 1) * this.pagination.take;
+    // const endIndex = Math.min(startIndex + this.pagination.take - 1, this.paginationMeta.pageCount - 1);
 
-    const pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
+    this.pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
       (i) => startPage + i
     );
-
-    this.pages = pages;
   }
 }

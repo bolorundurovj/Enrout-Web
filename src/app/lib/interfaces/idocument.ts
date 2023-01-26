@@ -1,5 +1,7 @@
 import {IStudent} from "@lib/interfaces/student.interface";
 import {DocumentState} from "@lib/enums/document-state";
+import {IStaff} from "@lib/interfaces/istaff";
+import {IWorkflow} from "@lib/interfaces/iworkflow";
 
 export interface IDocument {
   id: string;
@@ -10,8 +12,8 @@ export interface IDocument {
   description: string;
   attachment: string;
   owner: IStudent;
-  workflow?: any;
-  currentlyAssigned?: any;
+  workflow?: IWorkflow;
+  currentlyAssigned?: IStaff;
   currentlyAssignedId: string;
   handlers: string[];
 }

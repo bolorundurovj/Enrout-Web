@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {environment} from "@env/environment";
 import {HttpClient} from "@angular/common/http";
 
-const apiUrl = `${environment.apiUrl}/students`;
+// const apiUrl = `${environment.apiUrl}/students`;
 
 @Injectable({
   providedIn: 'root'
