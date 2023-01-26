@@ -10,7 +10,8 @@ export interface IDocument {
   description: string;
   attachment: string;
   owner: IStudent;
-  workflow: any;
-  currentlyAssigned: any;
+  workflow?: any;
+  currentlyAssigned?: any;
+  currentlyAssignedId: string;
   handlers: string[];
 }
