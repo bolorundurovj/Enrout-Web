@@ -3,11 +3,13 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {environment} from "@env/environment";
 import {IDocumentPayload} from "@lib/interfaces/idocument-payload";
 import {IDocument} from "@lib/interfaces/idocument";
-import {Observable} from "rxjs";
+import {from, Observable} from "rxjs";
 import {IPaginationParams} from "@lib/interfaces/ipagination-params";
 import {IPaginatedResponse} from "@lib/interfaces/ipaginated-response";
+import {IPublishDocumentPayload} from "@lib/interfaces/ipublish-document-payload";
 
-const apiUrl = `${environment.apiUrl}/students/documents`;
+const studentApiUrl = `${environment.apiUrl}/students/documents`;
+const staffApiUrl = `${environment.apiUrl}/staff/documents`;
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +27,7 @@ export class DocumentService {
   createDocument(doc: IDocumentPayload): Observable<IDocument> {
     return this.http
       .post<IDocument>(
-        apiUrl + '/',
+        studentApiUrl + '/',
         doc
       );
   }
@@ -41,7 +43,7 @@ export class DocumentService {
       .set('take', params.take)
     if (params?.q) queryParams.set('q', params.q)
 
-    return this.http.get<IPaginatedResponse<IDocument>>(apiUrl, {params: queryParams})
+    return this.http.get<IPaginatedResponse<IDocument>>(studentApiUrl, {params: queryParams})
   }
 
   /**
@@ -50,7 +52,7 @@ export class DocumentService {
    * @returns An observable of type IDocument
    */
   retrieveSingleDocument(id: string): Observable<IDocument> {
-    return this.http.get<IDocument>(`${apiUrl}/${id}`);
+    return this.http.get<IDocument>(`${studentApiUrl}/${id}`);
   }
 
   /**
@@ -59,7 +61,7 @@ export class DocumentService {
    * @returns An observable of type IDocument.
    */
   deleteSingleDocument(id: string): Observable<IDocument> {
-    return this.http.delete<IDocument>(`${apiUrl}/${id}`);
+    return this.http.delete<IDocument>(`${studentApiUrl}/${id}`);
   }
 
   /**
@@ -71,8 +73,36 @@ export class DocumentService {
   updateDocument(id: string, group: IDocumentPayload): Observable<IDocument> {
     return this.http
       .patch<IDocument>(
-        `${apiUrl}/${id}`,
+        `${studentApiUrl}/${id}`,
         group
+      );
+  }
+
+  /**
+   * This function takes in an id and a body, and returns an observable of type IDocument
+   * @param {string} id - The id of the document you want to publish
+   * @param {IPublishDocumentPayload} body - IPublishDocumentPayload
+   * @returns An observable of type IDocument
+   */
+  publishDocument(id: string, body: IPublishDocumentPayload): Observable<IDocument> {
+    return this.http
+      .patch<IDocument>(
+        `${studentApiUrl}/${id}/publish`,
+        body
+      );
+  }
+
+
+  /**
+   * It sends a PATCH request to the API to update the document with the given ID
+   * @param {string} id - The id of the student to nudge
+   * @returns An observable of type IDocument
+   */
+  sendNudge(id: string): Observable<IDocument> {
+    return this.http
+      .patch<IDocument>(
+        `${studentApiUrl}/${id}/nudge`,
+        {}
       );
   }
 }

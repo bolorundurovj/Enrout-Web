@@ -92,7 +92,7 @@
         </th>
         <td class="px-6 py-4">
           <span
-            [ngStyle]="{'background': stageColors[d.state]}"
+            [ngClass]="pillColor(d.state)"
             class="bg-blue-100 text-slate-200 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{d.state}}</span>
         </td>
         <td class="px-6 py-4">
@@ -110,13 +110,14 @@
         <td class="px-6 py-4 flex flex-row">
 
           <div class="inline-flex rounded-md shadow-sm">
-            <button *ngIf="doc?.currentlyAssigned === null; else nudgeElse;" aria-current="page"
+            <button (click)="publishDocument(d)" *ngIf="d?.currentlyAssignedId === null; else nudgeElse;"
+                    aria-current="page"
                     class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
                     type="button">
               Publish
             </button>
             <ng-template #nudgeElse>
-              <button aria-current="page"
+              <button (click)="sendNudge(d)" aria-current="page"
                       class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
                       type="button">
                 Nudge

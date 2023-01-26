@@ -114,6 +114,74 @@ export class DashboardComponent implements OnInit {
     this.showDialog = true;
   }
 
+  publishDocument(doc: IDocument) {
+    Confirm.show(
+      'Confirmation',
+      'Are you sure you want to publish this document? You cannot modify this document afterwards.',
+      'Yes',
+      'No',
+      () => {
+        this.isLoading = true;
+        this.doc = doc;
+        this._docService.publishDocument(doc.id, {staffId: ''})
+          .subscribe((response: IDocument) => {
+            if (response) {
+              Notify.success(`Published ${response.title}`)
+            } else {
+              Notify.failure('An error occurred')
+            }
+          }, (error) => {
+            Notify.failure(error?.error?.error || 'An error occurred')
+          }, () => {
+            this.isLoading = false;
+            this.getDocs()
+            this.doc = null!;
+          })
+      },
+      () => {
+        Notify.info('If you say so...');
+      },
+      {
+        width: '320px',
+        borderRadius: '8px',
+      },
+    )
+  }
+
+  sendNudge(doc: IDocument) {
+    Confirm.show(
+      'Confirmation',
+      'Are you sure you want to nudge the current handler?',
+      'Yes',
+      'No',
+      () => {
+        this.isLoading = true;
+        this.doc = doc;
+        this._docService.sendNudge(doc.id)
+          .subscribe((response) => {
+            if (response) {
+              Notify.success(`Sent a nudge`)
+            } else {
+              Notify.failure('An error occurred')
+            }
+          }, (error) => {
+            Notify.failure(error?.error?.error || 'An error occurred')
+          }, () => {
+            this.isLoading = false;
+            this.getDocs()
+            this.doc = null!;
+          })
+      },
+      () => {
+        Notify.info('If you say so...');
+      },
+      {
+        width: '320px',
+        borderRadius: '8px',
+      },
+    )
+  }
+
   saveDocument() {
     if (this.docForm.valid) {
       if (this.formMode === 'edit') {
@@ -288,5 +356,24 @@ export class DashboardComponent implements OnInit {
     );
 
     this.pages = pages;
+  }
+
+  pillColor(state: DocumentState) {
+    switch (state) {
+      case DocumentState.APPROVED:
+        return 'bg-green-500'
+        break;
+      case DocumentState.DRAFT:
+        return 'bg-gray-500'
+        break;
+      case DocumentState.PENDING:
+        return 'bg-orange-500'
+        break;
+      case DocumentState.REJECTED:
+        return 'bg-red-500'
+        break;
+      default:
+        return 'bg-black'
+    }
   }
 }
