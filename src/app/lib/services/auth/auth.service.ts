@@ -10,6 +10,9 @@ import {IStudent} from "@lib/interfaces/student.interface";
 import {IStaffRegistrationPayload} from "@lib/interfaces/istaff-registration-payload";
 import {IStaff} from "@lib/interfaces/istaff";
 import {ILoginPayload} from "@lib/interfaces/ilogin-payload";
+import {IAppUser} from "@lib/utils/storage/storage.types";
+import {UserType} from "@lib/enums/user-type";
+import {Notify} from "notiflix/build/notiflix-notify-aio";
 
 const apiUrl = `${environment.apiUrl}/auth`;
 
@@ -26,6 +29,10 @@ export class AuthService {
     return this.isLoggedIn$.getValue();
   }
 
+  get loggedInUser(): IAppUser | null {
+    return storage.getItem('App/user')
+  }
+
   loginStudent(credentials: ILoginPayload): void {
     const authData = {email: credentials.email, password: credentials.password};
     this.http
@@ -38,15 +45,16 @@ export class AuthService {
           if (response) {
             storage.setItem('App/session', response);
             storage.setItem('App/token', response.token.accessToken);
-            alert(`Logged in successfully`);
+            storage.setItem('App/user', {...response.user, role: UserType.STUDENT})
+            Notify.success(`Logged in successfully`);
             this.isLoggedIn$.next(true);
             this.router.navigate(['/student']);
           } else {
-            alert("An error occurred, please try again")
+            Notify.failure("An error occurred, please try again")
           }
         },
         (error) => {
-          alert(`${error.error?.error || 'An error occurred'}`);
+          Notify.failure(`${error.error?.error || 'An error occurred'}`);
           this.isLoggedIn$.next(false);
         }
       );
@@ -64,15 +72,16 @@ export class AuthService {
           if (response) {
             storage.setItem('App/session', response);
             storage.setItem('App/token', response.token.accessToken);
-            alert(`Logged in successfully`);
+            storage.setItem('App/user', {...response.user, role: UserType.STAFF})
+            Notify.success(`Logged in successfully`);
             this.isLoggedIn$.next(true);
             this.router.navigate(['/staff']);
           } else {
-            alert("An error occurred, please try again")
+            Notify.failure("An error occurred, please try again")
           }
         },
         (error) => {
-          alert(`${error.error?.error || 'An error occurred'}`);
+          Notify.failure(`${error.error?.error || 'An error occurred'}`);
           this.isLoggedIn$.next(false);
         }
       );
@@ -95,14 +104,14 @@ export class AuthService {
       .subscribe(
         (response) => {
           if (response) {
-            alert(`Registered successfully`);
+            Notify.success(`Registered successfully`);
             this.router.navigate(['/auth/login']);
           } else {
-            alert("An error occurred, please try again")
+            Notify.failure("An error occurred, please try again")
           }
         },
         (error) => {
-          alert(`${error?.error || 'An error occurred'}`);
+          Notify.failure(`${error?.error || 'An error occurred'}`);
           this.isLoggedIn$.next(false);
         }
       );
@@ -125,14 +134,14 @@ export class AuthService {
       .subscribe(
         (response) => {
           if (response) {
-            alert(`Registered successfully`);
+            Notify.success(`Registered successfully`);
             this.router.navigate(['/auth/login']);
           } else {
-            alert("An error occurred, please try again")
+            Notify.failure("An error occurred, please try again")
           }
         },
         (error) => {
-          alert(`${error?.error || 'An error occurred'}`);
+          Notify.failure(`${error?.error || 'An error occurred'}`);
           this.isLoggedIn$.next(false);
         }
       );
