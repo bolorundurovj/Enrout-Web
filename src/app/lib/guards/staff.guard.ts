@@ -11,7 +11,9 @@ export class StaffGuard implements CanLoad {
   }
 
   canLoad(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     route: Route,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     segments: UrlSegment[]): boolean {
     const user = this._authService.loggedInUser;
     if (user) {
