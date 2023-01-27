@@ -2,18 +2,18 @@ import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {DomSanitizer} from "@angular/platform-browser";
-import {AngularEditorConfig, AngularEditorModule} from "@kolkov/angular-editor";
-import {ModalComponent} from "@lib/components/modal/modal.component";
 import {IDocument} from "@lib/interfaces/idocument";
 import {DocumentService} from "@lib/services/document/document.service";
 import {PaginationParams} from "@lib/classes/pagination-params";
 import {IPaginatedMetadata} from "@lib/interfaces/ipaginated-metadata";
 import {Notify} from 'notiflix/build/notiflix-notify-aio';
+import {DocumentState} from "@lib/enums/document-state";
+import {RouterModule} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, AngularEditorModule, ModalComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
@@ -39,51 +39,6 @@ export class DashboardComponent implements OnInit {
   pages: number[] = [];
   doc: IDocument = null!;
 
-  editorConfig: AngularEditorConfig = {
-    editable: true,
-    spellcheck: true,
-    height: 'auto',
-    minHeight: '0',
-    maxHeight: 'auto',
-    width: 'auto',
-    minWidth: '0',
-    translate: 'yes',
-    enableToolbar: true,
-    showToolbar: true,
-    placeholder: 'Enter text here...',
-    defaultParagraphSeparator: '',
-    defaultFontName: '',
-    defaultFontSize: '',
-    fonts: [
-      {class: 'arial', name: 'Arial'},
-      {class: 'times-new-roman', name: 'Times New Roman'},
-      {class: 'calibri', name: 'Calibri'},
-      {class: 'comic-sans-ms', name: 'Comic Sans MS'}
-    ],
-    customClasses: [
-      {
-        name: 'quote',
-        class: 'quote',
-      },
-      {
-        name: 'redText',
-        class: 'redText'
-      },
-      {
-        name: 'titleText',
-        class: 'titleText',
-        tag: 'h1',
-      },
-    ],
-    uploadWithCredentials: false,
-    sanitize: true,
-    toolbarPosition: 'top',
-    toolbarHiddenButtons: [
-      ['bold', 'italic'],
-      ['fontSize']
-    ]
-  };
-
 
   constructor(private domSanitizer: DomSanitizer, private fb: FormBuilder, private _docService: DocumentService) {
   }
@@ -101,76 +56,10 @@ export class DashboardComponent implements OnInit {
     this.getDocs()
   }
 
-  editDocument(doc: IDocument) {
-    this.formMode = 'edit';
-    this.doc = doc;
-    this.docForm.controls['title'].setValue(doc.title);
-    this.docForm.controls['description'].setValue(doc.description);
-    this.showDialog = true;
-  }
-
-  saveDocument() {
-    if (this.docForm.valid) {
-      if (this.formMode === 'edit') {
-        this._docService.updateDocument(this.doc.id, {...this.docForm.value, state: this.doc.state})
-          .subscribe(
-            (response) => {
-              if (response) {
-                Notify.success('Updated Successfully')
-                this.getDocs()
-                this.showDialog = false;
-              } else {
-                Notify.failure("An error occurred, please try again")
-              }
-            },
-            (error) => {
-              console.error(error)
-              Notify.failure(`${error.error?.error || 'An error occurred'}`);
-            },
-            () => {
-              this.isLoading = false;
-              this.paginate();
-              this.docForm.reset();
-              this.doc = null!;
-              this.formMode = 'new'
-            }
-          );
-      } else {
-        this._docService.createDocument(this.docForm.value)
-          .subscribe(
-            (response) => {
-              if (response) {
-                this.getDocs()
-                Notify.success('Created Successfully')
-                this.showDialog = false;
-              } else {
-                Notify.failure("An error occurred, please try again")
-              }
-            },
-            (error) => {
-              console.error(error)
-              Notify.failure(`${error.error?.error || 'An error occurred'}`);
-            },
-            () => {
-              this.isLoading = false;
-              this.paginate();
-              this.docForm.reset();
-            }
-          );
-      }
-    } else {
-      Object.values(this.docForm.controls).forEach(control => {
-        if (control.invalid) {
-          control.markAsDirty();
-          control.updateValueAndValidity({onlySelf: true});
-        }
-      });
-    }
-  }
 
   getDocs() {
     this.isLoading = true;
-    this._docService.retrieveDocuments(this.pagination)
+    this._docService.retrieveStaffDocuments(this.pagination)
       .subscribe(
         (response) => {
           if (response) {
@@ -189,29 +78,6 @@ export class DashboardComponent implements OnInit {
           this.paginate();
         }
       );
-  }
-
-  deleteDoc(doc: IDocument) {
-    const res = confirm('Are you sure you want to delete this document? This action is irreversible.')
-
-    if (res) {
-      this.isLoading = true;
-      this.doc = doc;
-      this._docService.deleteSingleDocument(doc.id)
-        .subscribe((response) => {
-          if (response) {
-            Notify.success(`Deleted ${response.title}`)
-          } else {
-            Notify.failure('An error occurred')
-          }
-        }, (error) => {
-          Notify.failure(error?.error?.error || 'An error occurred')
-        }, () => {
-          this.isLoading = false;
-          this.getDocs()
-          this.doc = null!;
-        })
-    }
   }
 
   cancel() {
@@ -269,5 +135,20 @@ export class DashboardComponent implements OnInit {
     this.pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
       (i) => startPage + i
     );
+  }
+
+  pillColor(state: DocumentState) {
+    switch (state) {
+      case DocumentState.APPROVED:
+        return 'bg-green-500'
+      case DocumentState.DRAFT:
+        return 'bg-gray-500'
+      case DocumentState.PENDING:
+        return 'bg-orange-500'
+      case DocumentState.REJECTED:
+        return 'bg-red-500'
+      default:
+        return 'bg-black'
+    }
   }
 }
