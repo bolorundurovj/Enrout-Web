@@ -9,7 +9,7 @@ import {IPaginatedResponse} from "@lib/interfaces/ipaginated-response";
 import {IPublishDocumentPayload} from "@lib/interfaces/ipublish-document-payload";
 
 const studentApiUrl = `${environment.apiUrl}/students/documents`;
-// const staffApiUrl = `${environment.apiUrl}/staff/documents`;
+const staffApiUrl = `${environment.apiUrl}/staff/documents`;
 
 @Injectable({
   providedIn: 'root'
@@ -47,12 +47,35 @@ export class DocumentService {
   }
 
   /**
+   * It takes an object of type `IPaginationParams` as a parameter, and returns an observable of type
+   * `IPaginatedResponse<IDocument>`
+   * @param {IPaginationParams} params - IPaginationParams
+   * @returns An observable of type IPaginatedResponse<IDocument>
+   */
+  retrieveStaffDocuments(params: IPaginationParams): Observable<IPaginatedResponse<IDocument>> {
+    const queryParams = new HttpParams().set('order', params.order).set('page', params.page)
+      .set('take', params.take)
+    if (params?.q) queryParams.set('q', params.q)
+
+    return this.http.get<IPaginatedResponse<IDocument>>(staffApiUrl, {params: queryParams})
+  }
+
+  /**
    * It returns an Observable of type IDocument
    * @param {string} id - string - the id of the document to retrieve
    * @returns An observable of type IDocument
    */
   retrieveSingleDocument(id: string): Observable<IDocument> {
     return this.http.get<IDocument>(`${studentApiUrl}/${id}`);
+  }
+
+  /**
+   * It returns an Observable of type IDocument, which is a single document object
+   * @param {string} id - The id of the document you want to retrieve.
+   * @returns An observable of type IDocument
+   */
+  retrieveSingleStaffDocument(id: string): Observable<IDocument> {
+    return this.http.get<IDocument>(`${staffApiUrl}/${id}`);
   }
 
   /**
@@ -103,6 +126,35 @@ export class DocumentService {
       .patch<IDocument>(
         `${studentApiUrl}/${id}/nudge`,
         {}
+      );
+  }
+
+  /**
+   * It sends a PATCH request to the server, with the ID of the document to reject, and a comment
+   * @param {string} id - The id of the document to be rejected
+   * @param {string} comment - string - The comment to be added to the document
+   * @returns An observable of type IDocument
+   */
+  rejectDoc(id: string, comment: string): Observable<IDocument> {
+    return this.http
+      .patch<IDocument>(
+        `${staffApiUrl}/${id}/reject`,
+        {comment}
+      );
+  }
+
+  /**
+   * It sends a PATCH request to the server, with the ID of the document and a comment, and returns an observable of the
+   * document
+   * @param {string} id - The id of the document you want to request changes for.
+   * @param {string} comment - The comment that the staff member will leave for the student.
+   * @returns An observable of type IDocument
+   */
+  requestChanges(id: string, comment: string): Observable<IDocument> {
+    return this.http
+      .patch<IDocument>(
+        `${staffApiUrl}/${id}/request-changes`,
+        {comment}
       );
   }
 }
