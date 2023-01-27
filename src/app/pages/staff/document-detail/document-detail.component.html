@@ -1,0 +1,38 @@
+<div class="w-full flex flex-col">
+  <div class="w-full flex flex-row items-center justify-between mb-4">
+    <div class="font-bold text-xl">{{document.title}}-<span
+      class="text-gray-600 text-lg font-normal">({{document.state}})</span></div>
+    <div class="ml-auto flex flex-row items-center">
+      <button *ngIf="document.currentlyAssigned?.designation === designations.HOD; else approveBtn;"
+              [disabled]="document.state !== states.PENDING"
+              class="disabled:cursor-not-allowed text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
+              type="button">
+        Set Workflow
+      </button>
+      <ng-template #approveBtn>
+        <button [disabled]="document.state !== states.PENDING"
+                class="disabled:cursor-not-allowed text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
+                type="button">
+          Approve
+        </button>
+      </ng-template>
+      <button (click)="rejectDoc(document.id)" [disabled]="document.state !== states.PENDING"
+              class="disabled:cursor-not-allowed text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+              type="button">
+        Reject
+      </button>
+      <button (click)="requestChanges(document.id)" [disabled]="document.state !== states.PENDING"
+              class="disabled:cursor-not-allowed text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+              type="button">
+        Request Changes
+      </button>
+      <button (click)="print()"
+              class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+              type="button">
+        Print
+      </button>
+    </div>
+  </div>
+  <div *ngIf="document !== null" [innerHTML]="sanitize(document.description)" class="w-full bg-slate-100 p-2"
+       id="request"></div>
+</div>
