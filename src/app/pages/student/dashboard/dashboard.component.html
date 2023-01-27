@@ -84,7 +84,6 @@
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               id="checkbox-table-search-1"
               type="checkbox">
-            <label class="sr-only" for="checkbox-table-search-1">checkbox</label>
           </div>
         </td>
         <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">
@@ -93,7 +92,7 @@
         <td class="px-6 py-4">
           <span
             [ngClass]="pillColor(d.state)"
-            class="bg-blue-100 text-slate-200 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{d.state}}</span>
+            class="text-slate-200 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{d.state}}</span>
         </td>
         <td class="px-6 py-4">
           {{d.handlers.length}}/{{d?.workflow === null ? 'NA' : 5}}
