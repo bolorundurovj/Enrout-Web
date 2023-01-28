@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import {IPaginationParams} from "@lib/interfaces/ipagination-params";
 import {IPaginatedResponse} from "@lib/interfaces/ipaginated-response";
 import {IPublishDocumentPayload} from "@lib/interfaces/ipublish-document-payload";
+import {ISetWorkflowPayload} from "@lib/interfaces/iset-workflow-payload";
 
 const studentApiUrl = `${environment.apiUrl}/students/documents`;
 const staffApiUrl = `${environment.apiUrl}/staff/documents`;
@@ -163,6 +164,39 @@ export class DocumentService {
       .patch<IDocument>(
         `${staffApiUrl}/${id}/request-changes`,
         {comment}
+      );
+  }
+
+  /**
+   * This function takes an id and a payload and returns an observable of type IDocument
+   * @param {string} id - The id of the document you want to set the workflow for.
+   * @param {ISetWorkflowPayload} payload - ISetWorkflowPayload
+   * @returns An observable of type IDocument
+   */
+  setWorkflow(id: string, payload: ISetWorkflowPayload): Observable<IDocument> {
+    return this.http
+      .patch<IDocument>(
+        `${staffApiUrl}/${id}/set-workflow`,
+        payload
+      );
+  }
+
+
+  /**
+   * It takes an id, an optional comment and an optional file, and returns an observable of type IDocument
+   * @param {string} id - The id of the document to be approved
+   * @param {string} [comment] - string - The comment to be added to the document.
+   * @param {File} [file] - The file to be uploaded.
+   * @returns An observable of type IDocument
+   */
+  approveDocument(id: string, comment?: string, file?: File): Observable<IDocument> {
+    const form = new FormData();
+    if(comment) form.append('comment', comment);
+    if(file) form.append('document', file);
+    return this.http
+      .patch<IDocument>(
+        `${staffApiUrl}/${id}/approve`,
+        form
       );
   }
 }

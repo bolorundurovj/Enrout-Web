@@ -3,14 +3,16 @@
     <div class="font-bold text-xl">{{document.title}}-<span
       class="text-gray-600 text-lg font-normal">({{document.state}})</span></div>
     <div class="ml-auto flex flex-row items-center">
-      <button *ngIf="document.currentlyAssigned?.designation === designations.HOD; else approveBtn;"
+      <button (click)="selectWorkflow()"
+              *ngIf="document.workflow === null; else approveBtn;"
               [disabled]="document.state !== states.PENDING"
               class="disabled:cursor-not-allowed text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
               type="button">
         Set Workflow
       </button>
       <ng-template #approveBtn>
-        <button [disabled]="document.state !== states.PENDING"
+        <button (click)="showApproval()"
+                [disabled]="document.state !== states.PENDING"
                 class="disabled:cursor-not-allowed text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
                 type="button">
           Approve
@@ -36,3 +38,98 @@
   <div *ngIf="document !== null" [innerHTML]="sanitize(document.description)" class="w-full bg-slate-100 p-2"
        id="request"></div>
 </div>
+
+<app-modal [show]="showDialog"
+           [title]="'Select Workflow'">
+  <div class="w-1/2 mt-10 mx-auto flex-col bg-white dark:bg-slate-800 dark:text-white p-6 rounded-2xl w-[700px]">
+    <form [formGroup]="docForm" class="text-left">
+      <div class="mb-6">
+        <label class="block font-bold mb-2 text-sm font-medium text-gray-900 dark:text-white"
+               for="workflow">Workflow</label>
+        <select
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          formControlName="workflowId" id="workflow"
+          name="workflowId">
+          <option disabled selected>Select Workflow</option>
+          <option *ngFor="let w of workflows" [value]="w.id">{{w.name}}</option>
+        </select>
+      </div>
+      <div class="flex flex-row justify-end items-center w-full my-2">
+        <button (click)="cancel()"
+                class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                type="button">
+          <svg class="w-5 h-5 mr-2 -ml-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+          </svg>
+
+          Cancel
+        </button>
+        <button (click)="setWorkflow()" [disabled]="docForm.invalid"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:cursor-not-allowed"
+                type="button">
+          <svg class="w-5 h-5 mr-2 -ml-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+
+</app-modal>
+
+<app-modal [show]="showApprovalDialog"
+           [title]="'Approve Document'">
+  <div class="w-1/2 mt-10 mx-auto flex-col bg-white dark:bg-slate-800 dark:text-white p-6 rounded-2xl w-[700px]">
+    <form [formGroup]="approveForm" class="text-left">
+      <div class="mb-6">
+        <label class="block font-bold mb-2 text-sm font-medium text-gray-900 dark:text-white"
+               for="comment">Comment</label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          formControlName="comment" id="comment"
+          name="comment" type="text"/>
+      </div>
+      <div class="mb-6">
+        <label class="block font-bold mb-2 text-sm font-medium text-gray-900 dark:text-white"
+               for="file">Attachment</label>
+        <input
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          formControlName="file" id="file"
+          multiple="false" name="file" type="file"/>
+      </div>
+      <div class="flex flex-row justify-end items-center w-full my-2">
+        <button (click)="cancel()"
+                class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+                type="button">
+          <svg class="w-5 h-5 mr-2 -ml-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+          </svg>
+
+          Cancel
+        </button>
+        <button (click)="approve()" [disabled]="approveForm.invalid"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:cursor-not-allowed"
+                type="button">
+          <svg class="w-5 h-5 mr-2 -ml-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+
+</app-modal>

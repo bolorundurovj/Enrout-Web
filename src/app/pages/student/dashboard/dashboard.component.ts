@@ -129,7 +129,7 @@ export class DashboardComponent implements OnInit {
               Notify.failure('An error occurred')
             }
           }, (error) => {
-            Notify.failure(error?.error?.error || 'An error occurred')
+            Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
           }, () => {
             this.isLoading = false;
             this.getDocs()
@@ -163,7 +163,7 @@ export class DashboardComponent implements OnInit {
               Notify.failure('An error occurred')
             }
           }, (error) => {
-            Notify.failure(error?.error?.error || 'An error occurred')
+            Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
           }, () => {
             this.isLoading = false;
             this.getDocs()
@@ -304,7 +304,7 @@ export class DashboardComponent implements OnInit {
               Notify.failure('An error occurred')
             }
           }, (error) => {
-            Notify.failure(error?.error?.error || 'An error occurred')
+            Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
           }, () => {
             this.isLoading = false;
             this.getDocs()
