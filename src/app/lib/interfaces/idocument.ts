@@ -16,4 +16,6 @@ export interface IDocument {
   currentlyAssigned?: IStaff;
   currentlyAssignedId: string;
   handlers: string[];
+  reviewerComment?: string;
+  reviewerAttachment?: string;
 }

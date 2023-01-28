@@ -101,6 +101,14 @@ export class DocumentService {
       );
   }
 
+  resolveDocument(id: string, group: IDocumentPayload): Observable<IDocument> {
+    return this.http
+      .patch<IDocument>(
+        `${studentApiUrl}/${id}/resolve`,
+        group
+      );
+  }
+
   /**
    * This function takes in an id and a body, and returns an observable of type IDocument
    * @param {string} id - The id of the document you want to publish

@@ -26,7 +26,8 @@ export class DashboardComponent implements OnInit {
   showDialog = false;
   documents: Array<IDocument> = [];
   isLoading = false;
-  formMode: 'new' | 'edit' = 'new'
+  formMode: 'new' | 'edit' | 'resolve' = 'new'
+  states = DocumentState;
 
   pagination = new PaginationParams()
   paginationMeta: IPaginatedMetadata = {
@@ -182,7 +183,7 @@ export class DashboardComponent implements OnInit {
   saveDocument() {
     if (this.docForm.valid) {
       if (this.formMode === 'edit') {
-        this._docService.updateDocument(this.doc.id, {...this.docForm.value, state: this.doc.state})
+        this._docService.updateDocument(this.doc.id, {...this.docForm.value})
           .subscribe(
             (response) => {
               if (response) {
@@ -205,7 +206,32 @@ export class DashboardComponent implements OnInit {
               this.formMode = 'new'
             }
           );
-      } else {
+      }
+      else if (this.formMode === 'resolve') {
+        this._docService.resolveDocument(this.doc.id, {...this.docForm.value})
+          .subscribe(
+            (response) => {
+              if (response) {
+                this.getDocs()
+                this.showDialog = false;
+                Notify.success('Updated Successfully')
+              } else {
+                Notify.failure("An error occurred, please try again")
+              }
+            },
+            (error) => {
+              console.error(error)
+              Notify.failure(`${error.error?.error || 'An error occurred'}`);
+            },
+            () => {
+              this.isLoading = false;
+              this.paginate();
+              this.docForm.reset();
+              this.doc = null!;
+              this.formMode = 'new'
+            }
+          );
+      }else {
         this._docService.createDocument(this.docForm.value)
           .subscribe(
             (response) => {
@@ -372,5 +398,13 @@ export class DashboardComponent implements OnInit {
       default:
         return 'bg-black'
     }
+  }
+
+  resolveDocument(doc: IDocument) {
+    this.formMode = 'resolve';
+    this.doc = doc;
+    this.docForm.controls['title'].setValue(doc.title);
+    this.docForm.controls['description'].setValue(doc.description);
+    this.showDialog = true;
   }
 }
