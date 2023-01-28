@@ -1,5 +1,27 @@
 
 
+# [0.3.0](https://github.com/bolorundurovj/enrout-ui/compare/0.2.0...0.3.0) (2023-01-28)
+
+
+### Bug Fixes
+
+* Linting Issues ([0845bf8](https://github.com/bolorundurovj/enrout-ui/commit/0845bf8d1eea6a0ff9672129e8b3664deb10215f))
+* Linting Issues ([be52392](https://github.com/bolorundurovj/enrout-ui/commit/be5239268395cb3af9b1638285b1264559fe1a64))
+
+
+### Features
+
+* **document:** Retrieve Staff Documents, Reject Document, Request Changes on Document at the service layer ([f4daa0b](https://github.com/bolorundurovj/enrout-ui/commit/f4daa0ba0d3d748db30bdd5e0a3420272dfe6e05))
+* **staff:** Add New Routes ([cc2c08d](https://github.com/bolorundurovj/enrout-ui/commit/cc2c08d89258a998bf3f50e9a6aaefe4e972230d))
+* **staff:** Add New Routes ([5dab8f6](https://github.com/bolorundurovj/enrout-ui/commit/5dab8f677316da6faf81ae56a4615b24d666764e))
+* **staff:** Approve A Document ([b8fb4a0](https://github.com/bolorundurovj/enrout-ui/commit/b8fb4a0242100bd60ed234f1ea90d95e6fd5103b))
+* **staff:** Update Dashboard ([f887b09](https://github.com/bolorundurovj/enrout-ui/commit/f887b094b438301edae415997ea5ffa7caebd4f8))
+* **staff:** View Student Document Details ([7ccdf78](https://github.com/bolorundurovj/enrout-ui/commit/7ccdf78266ac9b2c7d8989ce2915e1a54c803451))
+* **staff:** View Student Documents ([d1b0c17](https://github.com/bolorundurovj/enrout-ui/commit/d1b0c178330483e34c129f3040b4a7cdb093d891))
+* Update Document States ([bfba0e7](https://github.com/bolorundurovj/enrout-ui/commit/bfba0e74d752eccea8c31d01284c9f625dc3f66b))
+* **util:** Setup Printer ([64aee9b](https://github.com/bolorundurovj/enrout-ui/commit/64aee9b99d32d200fc1755af9af0de2b2f8aa3be))
+* **workflow:** Resolve A 'Changes Requested' Document ([d3ec553](https://github.com/bolorundurovj/enrout-ui/commit/d3ec5536f6bd4e56a75cc4eeb86d462a29597764))
+
 # [0.2.0](https://github.com/bolorundurovj/enrout-ui/compare/0.1.0...0.2.0) (2023-01-26)
 
 
