@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from "@angular/router";
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
+import {AuthService} from "@lib/services";
 
 @Component({
   selector: 'app-student-layout',
@@ -25,7 +26,9 @@ export class StudentLayoutComponent {
 
   otherRoutes: Array<IStudentRoute> = []
 
-  constructor(private domSanitizer: DomSanitizer) {
+  fullName = this.authService.loggedInUser?.fullName || 'NA'
+
+  constructor(private domSanitizer: DomSanitizer, private authService: AuthService) {
   }
 
 }
