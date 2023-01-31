@@ -3,7 +3,7 @@ import { Route } from '@angular/router';
 export const ROUTES: Route[] = [
   {
     path: '',
-    title: 'Home',
+    title: 'Enrout Home',
     loadComponent: async () => (await import('./home.page')).HomePage,
   },
 ];

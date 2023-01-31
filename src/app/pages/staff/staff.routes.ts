@@ -11,14 +11,17 @@ export const ROUTES: Routes = [
   },
   {
     path: 'dashboard',
+    title: 'Dashboard',
     component: DashboardComponent
   },
   {
     path: 'documents',
+    title: 'Documents',
     component: DocumentsComponent
   },
   {
     path: 'documents/:id',
+    title: 'Document Detail',
     component: DocumentDetailComponent
   }
 ]

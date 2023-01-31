@@ -9,6 +9,7 @@ export const ROUTES: Routes = [
   },
   {
     path: 'dashboard',
+    title: 'Dashboard',
     component: DashboardComponent
   }
 ]
