@@ -4,6 +4,8 @@ import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 import {AuthService} from '@lib/services';
 import {UserType} from "@lib/enums/user-type";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {Title} from "@angular/platform-browser";
+import {Notify} from "notiflix/build/notiflix-notify-aio";
 
 @Component({
   standalone: true,
@@ -21,12 +23,14 @@ export class LoginPage implements OnInit {
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _authService: AuthService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private title: Title
   ) {
     this._callbackURL = this._activatedRoute.snapshot.queryParamMap.get('callbackURL') || `/`;
   }
 
   ngOnInit() {
+    this.title.setTitle('Login')
     this.loginForm = this.fb.group({
       email: [null, [Validators.email, Validators.required]],
       password: [null, [Validators.required]]
@@ -45,7 +49,7 @@ export class LoginPage implements OnInit {
         this._authService.loginStudent(this.loginForm.value)
       }
     } else {
-      alert('Some data is invalid')
+      Notify.failure('Some data is invalid')
     }
     // this._router.navigate([this._callbackURL]);
   }

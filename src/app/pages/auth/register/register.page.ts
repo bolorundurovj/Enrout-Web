@@ -8,6 +8,7 @@ import {DepartmentService} from "@lib/services/department/department.service";
 import {PaginationParams} from "@lib/classes/pagination-params";
 import {IPaginatedMetadata} from "@lib/interfaces/ipaginated-metadata";
 import {AuthService} from "@lib/services";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   standalone: true,
@@ -31,11 +32,12 @@ export class RegisterPage implements OnInit {
   };
 
 
-  constructor(private _deptService: DepartmentService, private _authService: AuthService) {
+  constructor(private _deptService: DepartmentService, private _authService: AuthService, private title: Title) {
     this.pagination.take = 25;
   }
 
   ngOnInit() {
+    this.title.setTitle('Register')
     this.getDepts()
   }
 

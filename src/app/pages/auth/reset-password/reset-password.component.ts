@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterModule} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   standalone: true,
@@ -8,5 +9,11 @@ import {RouterModule} from "@angular/router";
   templateUrl: './reset-password.component.html',
   styleUrls: ['./reset-password.component.css']
 })
-export class ResetPasswordComponent {
+export class ResetPasswordComponent implements OnInit{
+  constructor(private title: Title) {
+  }
+
+  ngOnInit() {
+    this.title.setTitle('Reset Password')
+  }
 }
