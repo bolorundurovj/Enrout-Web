@@ -1,62 +1,99 @@
-<section>
-  <h1>Home</h1>
+<div class="relative flex flex-col items-center justify-center min-h-screen bg-cover min-w-screen rounded-2xl"
+     style="background-image:url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80')">
+  <div class="absolute inset-0 w-full h-full bg-black bg-opacity-75 rounded-2xl"></div>
 
-  <h2 class="mb-4">Choose your theme</h2>
-
-  <div class="flex flex-wrap gap-3 mb-6">
-    <button
-      class="min-w-[150px] btn {{currentTheme === 'system' ? 'btn-primary' : 'btn-secondary'}}"
-      (click)="handleThemeChange('system')"
-    >
-      <!-- prettier-ignore -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-      System
-    </button>
-    <button
-      class="min-w-[150px] btn {{currentTheme === 'light' ? 'btn-primary' : 'btn-secondary'}}"
-      (click)="handleThemeChange('light')"
-    >
-      <!-- prettier-ignore -->
-      <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-      Light
-    </button>
-    <button
-      class="min-w-[150px] btn {{currentTheme === 'dark' ? 'btn-primary' : 'btn-secondary'}}"
-      (click)="handleThemeChange('dark')"
-    >
-      <!-- prettier-ignore -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-      Dark
-    </button>
+  <div class="flex max-w-6xl mx-auto">
+    <div class="container relative flex flex-col w-1/2 px-10 pb-1 pr-12 text-2xl font-hairline text-white">
+      <h2 class="relative z-20 text-5xl font-extrabold leading-tight text-white">Empower Your University<br> with
+        Seamless Document Management
+      </h2>
+      <p class="relative z-20 block mt-4 text-xl">Say goodbye to the hassle of manual document routing and management.
+        Our system offers a centralized, secure, and efficient way to manage all your university documents. Whether it's
+        a departmental proposal, a student's transcript, or an official letter, our solution makes sure your documents
+        are always at your fingertips, whenever and wherever you need them.</p>
+      <div class="flex mt-4">
+        <a
+          class="flex items-center self-start justify-center px-5 py-3 mt-5 text-base font-medium leading-tight text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-lg shadow hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo md:py-4 md:text-lg md:px-8"
+          href="staff">Staff</a>
+        <a
+          class="flex items-center self-start justify-center px-5 py-3 mt-5 ml-5 text-base font-medium leading-tight text-indigo-500 transition duration-150 ease-in-out bg-gray-200 border-transparent rounded-lg shadow hover:bg-white focus:outline-none focus:border-gray-100 focus:shadow-outline-gray md:py-4 md:text-lg md:px-8"
+          href="student">Student</a>
+      </div>
+    </div>
+    <div class="relative w-1/2 overflow-hidden rounded-lg shadow-2xl cursor-pointer group">
+      <div class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-25">
+                <span class="flex items-center justify-center w-20 h-20 bg-white bg-opacity-75 rounded-full">
+                    <svg class="w-auto h-8 ml-1 text-indigo-600 fill-current" viewBox="0 0 52 66"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 30.7L4.1.6C2.6-.4.8.9.8 2.9v60.3c0 2 1.8 3.3 3.3 2.3L50 35.3c1.5-1 1.5-3.6 0-4.6z"
+                              fill-rule="nonzero"/></svg>
+                </span>
+      </div>
+      <img
+        class="object-cover w-full h-full"
+        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3290&q=80">
+    </div>
   </div>
+</div>
+<!--<section>-->
+<!--  <h1>Home</h1>-->
 
-  <div class="mt-12">
-    <h3 class="h5">Settings</h3>
-    <ul>
-      <li>
-        <a class="text-sm link" routerLink="/settings/accessibility"> Accessibility </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/settings/account"> Account </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/settings/appearance"> Appearance </a>
-      </li>
-    </ul>
-  </div>
+<!--  <h2 class="mb-4">Choose your theme</h2>-->
 
-  <div class="mt-6">
-    <h3 class="h5">Profiles</h3>
-    <ul>
-      <li>
-        <a class="text-sm link" routerLink="/maria" text-sm> Maria </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/pedro" text-sm> Pedro </a>
-      </li>
-      <li>
-        <a class="text-sm link" routerLink="/sara" text-sm> Sara </a>
-      </li>
-    </ul>
-  </div>
-</section>
+<!--  <div class="flex flex-wrap gap-3 mb-6">-->
+<!--    <button-->
+<!--      class="min-w-[150px] btn {{currentTheme === 'system' ? 'btn-primary' : 'btn-secondary'}}"-->
+<!--      (click)="handleThemeChange('system')"-->
+<!--    >-->
+<!--      &lt;!&ndash; prettier-ignore &ndash;&gt;-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>-->
+<!--      System-->
+<!--    </button>-->
+<!--    <button-->
+<!--      class="min-w-[150px] btn {{currentTheme === 'light' ? 'btn-primary' : 'btn-secondary'}}"-->
+<!--      (click)="handleThemeChange('light')"-->
+<!--    >-->
+<!--      &lt;!&ndash; prettier-ignore &ndash;&gt;-->
+<!--      <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>-->
+<!--      Light-->
+<!--    </button>-->
+<!--    <button-->
+<!--      class="min-w-[150px] btn {{currentTheme === 'dark' ? 'btn-primary' : 'btn-secondary'}}"-->
+<!--      (click)="handleThemeChange('dark')"-->
+<!--    >-->
+<!--      &lt;!&ndash; prettier-ignore &ndash;&gt;-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>-->
+<!--      Dark-->
+<!--    </button>-->
+<!--  </div>-->
+
+<!--  <div class="mt-12">-->
+<!--    <h3 class="h5">Settings</h3>-->
+<!--    <ul>-->
+<!--      <li>-->
+<!--        <a class="text-sm link" routerLink="/settings/accessibility"> Accessibility </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a class="text-sm link" routerLink="/settings/account"> Account </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a class="text-sm link" routerLink="/settings/appearance"> Appearance </a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+
+<!--  <div class="mt-6">-->
+<!--    <h3 class="h5">Profiles</h3>-->
+<!--    <ul>-->
+<!--      <li>-->
+<!--        <a class="text-sm link" routerLink="/maria" text-sm> Maria </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a class="text-sm link" routerLink="/pedro" text-sm> Pedro </a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <a class="text-sm link" routerLink="/sara" text-sm> Sara </a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</section>-->
