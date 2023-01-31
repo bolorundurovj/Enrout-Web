@@ -45,7 +45,7 @@ export class AuthService {
           if (response) {
             storage.setItem('App/session', response);
             storage.setItem('App/token', response.token.accessToken);
-            storage.setItem('App/user', {...response.user, role: UserType.STUDENT})
+            storage.setItem('App/user', {...response.user, role: UserType.STUDENT, fullName: `${response.user.firstName} ${response.user.lastName}`})
             Notify.success(`Logged in successfully`);
             this.isLoggedIn$.next(true);
             this.router.navigate(['/student']);
@@ -72,7 +72,7 @@ export class AuthService {
           if (response) {
             storage.setItem('App/session', response);
             storage.setItem('App/token', response.token.accessToken);
-            storage.setItem('App/user', {...response.user, role: UserType.STAFF})
+            storage.setItem('App/user', {...response.user, role: UserType.STAFF, fullName: `${response.user.firstName} ${response.user.lastName}`})
             Notify.success(`Logged in successfully`);
             this.isLoggedIn$.next(true);
             this.router.navigate(['/staff']);

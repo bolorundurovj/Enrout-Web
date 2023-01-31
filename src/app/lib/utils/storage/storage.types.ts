@@ -19,5 +19,6 @@ export type StorageObjectData<T extends StorageObjectType> = {
 export interface IAppUser {
   id: string;
   email: string;
-  role: UserType
+  fullName: string;
+  role: UserType;
 }
