@@ -34,13 +34,13 @@ export const routes: Routes = [
     canLoad: [AuthGuard, StudentGuard]
   },
   {
-    path: ':username',
-    loadChildren: async () => (await import('@pages/profile/profile.routes')).ROUTES,
+    path: 'settings',
+    loadChildren: async () => (await import('@pages/settings/settings.routes')).ROUTES,
     canLoad: [AuthGuard],
   },
   {
-    path: 'settings',
-    loadChildren: async () => (await import('@pages/settings/settings.routes')).ROUTES,
+    path: ':username',
+    loadChildren: async () => (await import('@pages/profile/profile.routes')).ROUTES,
     canLoad: [AuthGuard],
   },
   {

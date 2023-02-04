@@ -2,6 +2,11 @@ import { Route } from '@angular/router';
 
 export const ROUTES: Route[] = [
   {
+    path: '',
+    redirectTo: 'account',
+    pathMatch: 'full'
+  },
+  {
     path: 'accessibility',
     title: 'Accessibility settings',
     loadComponent: async () => (await import('./accessibility/accessibility.page')).AccessibilityPage,
