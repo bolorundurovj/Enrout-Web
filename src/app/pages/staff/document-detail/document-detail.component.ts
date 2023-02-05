@@ -68,7 +68,7 @@ export class DocumentDetailComponent implements OnInit {
         this.document = doc;
       }, (error) => {
         console.error(error)
-        Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+        Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
       }, () => {
         this.isLoading = true;
       })
@@ -83,8 +83,9 @@ export class DocumentDetailComponent implements OnInit {
       this.docService.rejectDoc(id, comment)
         .subscribe(() => {
           Notify.info('The owner has been notified of the rejection')
+          this.location.back();
         }, (error) => {
-          Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+          Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
         })
     }, () => {
       Notify.info('Cancelled')
@@ -99,8 +100,9 @@ export class DocumentDetailComponent implements OnInit {
       this.docService.requestChanges(id, comment)
         .subscribe(() => {
           Notify.info('The owner has been notified')
+          this.location.back();
         }, (error) => {
-          Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+          Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
         })
     }, () => {
       Notify.info('Cancelled')
@@ -131,13 +133,13 @@ export class DocumentDetailComponent implements OnInit {
       this.workflows = response.data
     }, (error) => {
       console.error(error)
-      Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+      Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
     })
   }
 
   cancel() {
     this.showDialog = false;
-    this.showApprovalDialog=false;
+    this.showApprovalDialog = false;
   }
 
   setWorkflow() {
@@ -145,24 +147,26 @@ export class DocumentDetailComponent implements OnInit {
       this.docService.setWorkflow(this.document.id, this.docForm.value)
         .subscribe(() => {
           Notify.success('Workflow Set!')
-          this.getDocument(this.document.id)
+          // this.getDocument(this.document.id)
+          this.location.back();
         }, (error) => {
           console.error(error)
-          Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+          Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
         })
     }
   }
 
   approve() {
-    if(this.approveForm.valid){
-        this.docService.approveDocument(this.document.id, this.approveForm.value?.comment, this.approveForm.value?.file)
-          .subscribe(() => {
-            Notify.success('Approved & Forwarded!')
-            this.getDocument(this.document.id)
-          }, (error) => {
-            console.error(error)
-            Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
-          })
+    if (this.approveForm.valid) {
+      this.docService.approveDocument(this.document.id, this.approveForm.value?.comment, this.approveForm.value?.file)
+        .subscribe(() => {
+          Notify.success('Approved & Forwarded!')
+          // this.getDocument(this.document.id)
+          this.location.back();
+        }, (error) => {
+          console.error(error)
+          Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
+        })
     }
   }
 
