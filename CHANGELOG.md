@@ -1,5 +1,26 @@
 
 
+# [1.0.0](https://github.com/bolorundurovj/enrout-ui/compare/0.3.0...1.0.0) (2023-02-05)
+
+
+### Features
+
+* Add Page Titles ([70a88d8](https://github.com/bolorundurovj/enrout-ui/commit/70a88d882214cdbafe0fe2efbae34532eccf49b7))
+* Add Page Titles ([eeebc2b](https://github.com/bolorundurovj/enrout-ui/commit/eeebc2b6ff3d99ad37612f32a2ec504e6febaa9d))
+* **staff:** Update Document approval, rejection logic ([4363eb7](https://github.com/bolorundurovj/enrout-ui/commit/4363eb78480fb6b31dd81fea6206e1d973c46bd4))
+* **staff:** Update UI ([9d5a24b](https://github.com/bolorundurovj/enrout-ui/commit/9d5a24b7a28b7b6a11b97bbc281efc6c58bab029))
+* Update Constants ([60a911d](https://github.com/bolorundurovj/enrout-ui/commit/60a911dcd7e8037a49fec6b6a5542e700a73942b))
+* Update Constants ([6cba982](https://github.com/bolorundurovj/enrout-ui/commit/6cba982a70a6165c44e7419601796bd922146520))
+* Update Home Page ([2dd8245](https://github.com/bolorundurovj/enrout-ui/commit/2dd82451af91d1d038cef502f53594d51d623f11))
+* Update HomePage Image ([df9447f](https://github.com/bolorundurovj/enrout-ui/commit/df9447f5e1783c588e3f21505ec447a8dc3fb299))
+* Update Login Image ([c552c89](https://github.com/bolorundurovj/enrout-ui/commit/c552c89b1ae527df85aecd3bfe91ef4617173d98))
+* Update Logo ([6904021](https://github.com/bolorundurovj/enrout-ui/commit/690402157bc7c5f4b734f7568a3769ede2bb733e))
+* Update Readme ([b618dc2](https://github.com/bolorundurovj/enrout-ui/commit/b618dc23ebfa2c42d353a39130622286f579630a))
+* Update Routing & UI ([74f4de0](https://github.com/bolorundurovj/enrout-ui/commit/74f4de0fdd775c31b7f4dab35a27b6433ccd3cf0))
+* Update Staff Dashboard ([d445b40](https://github.com/bolorundurovj/enrout-ui/commit/d445b40b2c252eb0cf1f2c82f0b47ba37af49c36))
+* Update Staff Layout ([c627fcb](https://github.com/bolorundurovj/enrout-ui/commit/c627fcb7eb0fe9b44372a1fefd5cd891b51b4790))
+* Update Student Layout ([90be43a](https://github.com/bolorundurovj/enrout-ui/commit/90be43aed89bebee624b3466448eef7c8ae2a5f8))
+
 # [0.3.0](https://github.com/bolorundurovj/enrout-ui/compare/0.2.0...0.3.0) (2023-01-28)
 
 
