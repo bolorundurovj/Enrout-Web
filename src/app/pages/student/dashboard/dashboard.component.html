@@ -14,11 +14,11 @@
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-2">
     <div class="flex items-center justify-between pb-4">
       <div>
-        <select
-          (change)="getDocs()"
-          [(ngModel)]="pagination.take"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          id="countries">
+        <select (change)="getDocs()"
+                [(ngModel)]="pagination.take"
+                [disabled]="documents.length < 1"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                id="countries">
           <option>Page Size</option>
           <option *ngFor="let l of limits" [value]="l">{{l}} items</option>
         </select>
@@ -33,14 +33,14 @@
                   fill-rule="evenodd"></path>
           </svg>
         </div>
-        <input
-          class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          id="table-search"
-          placeholder="Search for items"
-          type="text">
+        <input [disabled]="documents.length < 1"
+               class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+               id="table-search"
+               placeholder="Search for items"
+               type="text">
       </div>
     </div>
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <table *ngIf="documents.length > 0" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th class="p-4" scope="col">
@@ -146,7 +146,7 @@
       </tr>
       </tbody>
     </table>
-    <nav aria-label="Table navigation" class="flex items-center justify-between pt-4">
+    <nav *ngIf="documents.length > 0" aria-label="Table navigation" class="flex items-center justify-between pt-4">
       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span
         class="font-semibold text-gray-900 dark:text-white">{{(pagination.take * pagination.page) - pagination.take + 1}}
         -{{(pagination.take * pagination.page) < paginationMeta.itemCount ? (pagination.take * pagination.page) : paginationMeta.itemCount}}</span> of <span
