@@ -1,27 +1,37 @@
-<h1 align="center">Angular Boilerplate</h1>
+<h1 align="center">Enrout</h1>
 
 <p align="center">
   <img src="https://img.icons8.com/ios-filled/150/000000/angularjs.png" alt="angular-logo" width="120px" height="120px"/>
   <br>
-  <i>Lightweight & minimalistic Angular starter</i>
+  <i>UDRS is a web-based system built using Angular that provides a platform for students and staff of the university to manage and route documents efficiently. With UDRS, you can easily upload, track, and receive documents within the university's network, making it easier to manage your day-to-day activities.
+</i>
   <br>
 </p>
 
 <p align="center">
-  <a href="https://angularboilerplate.vercel.app"><strong>https://angularboilerplate.vercel.app</strong></a>
+  <a href="enrout-ui-git-dev-bolorundurovj.vercel.app/"><strong>enrout-ui-git-dev-bolorundurovj.vercel.app/</strong></a>
   <br>
 </p>
 
 <p align="center">
   <a href="CONTRIBUTING.md">Contributing Guidelines</a>
   ·
-  <a href="https://github.com/juanmesa2097/angular-boilerplate/issues">Submit an Issue</a>
+  <a href="https://github.com/bolorundurovj/enrout-ui/issues">Submit an Issue</a>
   <br>
   <br>
 </p>
 <hr>
 
-## ⚗️ Features
+## ️⚗️ Key Features
+
+- User authentication for staff and students
+- Document upload and management
+- Document routing and tracking
+- Notifications and alerts for new and pending documents
+- Secure document storage and retrieval
+- User-friendly interface
+
+## ⚗️ Technical Features
 
 - Lazy loading
 - Standalone components
@@ -118,3 +128,21 @@
 | test     | Run unit tests                                              | npm run test     | yarn test     | pnpm test     | ng test                                         |
 | test:run | Run unit tests with headless browser and without watch mode | npm run test:run | yarn test:run | pnpm test:run | ng test --watch=false --browsers ChromeHeadless |
 | lint     | Lint code                                                   | npm run lint     | yarn lint     | pnpm lint     | ng lint                                         |
+
+## Contributing
+
+We welcome contributions to UDRS. If you want to contribute, please follow these steps:
+
+1. Fork the UDRS repository.
+2. Create a new branch for your changes.
+3. Make the necessary changes.
+4. Commit your changes and push to your fork.
+5. Create a pull request to the main UDRS repository.
+
+## Support
+
+If you encounter any issues while using UDRS, please open a new issue in the UDRS repository. We will respond to your issue as soon as possible.
+
+## License
+
+UDRS is released under the MIT License. See the [LICENSE](LICENSE) file for details.
