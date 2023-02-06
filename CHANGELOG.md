@@ -1,5 +1,22 @@
 
 
+# [1.1.0](https://github.com/bolorundurovj/enrout-ui/compare/1.0.0...1.1.0) (2023-02-06)
+
+
+### Bug Fixes
+
+* Linting Issues ([07daf22](https://github.com/bolorundurovj/enrout-ui/commit/07daf22cdaca0ab6946fd69232137407999f80b0))
+
+
+### Features
+
+* Switch from Standalone Components to Modules ([fe58961](https://github.com/bolorundurovj/enrout-ui/commit/fe589610ce0fa18c02f16dd8acfdbe90b877eaf3))
+
+
+### Performance Improvements
+
+* Improve SEO ([1dd5559](https://github.com/bolorundurovj/enrout-ui/commit/1dd555973bf1b3166935d1f2a5d4454ed75124dc))
+
 # [1.0.0](https://github.com/bolorundurovj/enrout-ui/compare/0.3.0...1.0.0) (2023-02-05)
 
 
