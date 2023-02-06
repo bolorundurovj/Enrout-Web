@@ -1,5 +1,15 @@
 
 
+# [1.2.0](https://github.com/bolorundurovj/enrout-ui/compare/1.1.0...1.2.0) (2023-02-06)
+
+
+### Features
+
+* Indicate Loading State & Disable Button ([e9dc117](https://github.com/bolorundurovj/enrout-ui/commit/e9dc1170ea6c5fde33ec74c7d2663ebe72b3c0df))
+* Indicate Loading State & Disable Button on Registration ([5c3e866](https://github.com/bolorundurovj/enrout-ui/commit/5c3e86638ba72bf8c211371aa9fb24cf5b07c079))
+* Indicate Loading State On Students Documents Table ([67bdf97](https://github.com/bolorundurovj/enrout-ui/commit/67bdf978a9d8f1030df0ecb77b6e43293761adba))
+* Setup Spinner Component ([d6f5ebe](https://github.com/bolorundurovj/enrout-ui/commit/d6f5ebeba7370cda354e38a5b56a459b1b29b704))
+
 # [1.1.0](https://github.com/bolorundurovj/enrout-ui/compare/1.0.0...1.1.0) (2023-02-06)
 
 
