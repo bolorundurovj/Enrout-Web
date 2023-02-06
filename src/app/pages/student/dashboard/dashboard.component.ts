@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {DomSanitizer} from "@angular/platform-browser";
-import {AngularEditorConfig, AngularEditorModule} from "@kolkov/angular-editor";
-import {ModalComponent} from "@lib/components/modal/modal.component";
+import {AngularEditorConfig} from "@kolkov/angular-editor";
 import {IDocument} from "@lib/interfaces/idocument";
 import {DocumentService} from "@lib/services/document/document.service";
 import {PaginationParams} from "@lib/classes/pagination-params";

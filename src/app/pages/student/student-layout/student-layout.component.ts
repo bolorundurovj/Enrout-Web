@@ -1,6 +1,4 @@
 import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from "@angular/router";
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 import {AuthService} from "@lib/services";
 

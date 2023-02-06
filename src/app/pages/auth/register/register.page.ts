@@ -1,14 +1,12 @@
-import {CommonModule} from '@angular/common';
 import {Component, OnInit} from '@angular/core';
-import {RouterModule} from "@angular/router";
 import {UserType} from "@lib/enums/user-type";
-import {FormsModule, NgForm} from "@angular/forms";
 import {IDepartment} from "@lib/interfaces/idepartment";
 import {DepartmentService} from "@lib/services/department/department.service";
 import {PaginationParams} from "@lib/classes/pagination-params";
 import {IPaginatedMetadata} from "@lib/interfaces/ipaginated-metadata";
 import {AuthService} from "@lib/services";
 import {Title} from "@angular/platform-browser";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-register',

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CommonModule, Location} from '@angular/common';
+import {Location} from '@angular/common';
 import {DocumentService} from "@lib/services/document/document.service";
 import {IDocument} from "@lib/interfaces/idocument";
 import {Notify} from "notiflix/build/notiflix-notify-aio";
@@ -10,8 +10,7 @@ import {printPage} from "@lib/utils/printer/printer.util";
 import {Confirm} from "notiflix";
 import {DocumentState} from "@lib/enums/document-state";
 import {IWorkflow} from "@lib/interfaces/iworkflow";
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {ModalComponent} from "@lib/components/modal/modal.component";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {WorkflowService} from "@lib/services/workflow/workflow.service";
 import {PaginationParams} from "@lib/classes/pagination-params";
 

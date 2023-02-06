@@ -1,9 +1,8 @@
-import {CommonModule} from '@angular/common';
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router, RouterModule} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '@lib/services';
 import {UserType} from "@lib/enums/user-type";
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
 import {Notify} from "notiflix/build/notiflix-notify-aio";
 

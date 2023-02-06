@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {RouterModule} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {IDocument} from "@lib/interfaces/idocument";
 import {PaginationParams} from "@lib/classes/pagination-params";
 import {IPaginatedMetadata} from "@lib/interfaces/ipaginated-metadata";
