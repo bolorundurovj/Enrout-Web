@@ -8,8 +8,7 @@ import {Title} from "@angular/platform-browser";
 import {Notify} from "notiflix/build/notiflix-notify-aio";
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.css'],
 })

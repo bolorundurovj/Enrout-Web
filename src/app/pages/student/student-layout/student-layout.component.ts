@@ -6,8 +6,6 @@ import {AuthService} from "@lib/services";
 
 @Component({
   selector: 'app-student-layout',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
   templateUrl: './student-layout.component.html',
   styleUrls: ['./student-layout.component.css']
 })

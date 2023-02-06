@@ -12,8 +12,6 @@ import {DocumentState} from "@lib/enums/document-state";
 
 @Component({
   selector: 'app-documents',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './documents.component.html',
   styleUrls: ['./documents.component.css']
 })

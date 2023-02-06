@@ -11,8 +11,7 @@ import {AuthService} from "@lib/services";
 import {Title} from "@angular/platform-browser";
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule],
+  selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.css'],
 })

@@ -7,8 +7,6 @@ import {AuthService} from "@lib/services";
 
 @Component({
   selector: 'app-staff-layout',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
   templateUrl: './staff-layout.component.html',
   styleUrls: ['./staff-layout.component.css']
 })

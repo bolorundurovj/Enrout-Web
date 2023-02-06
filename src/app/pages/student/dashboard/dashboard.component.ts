@@ -14,8 +14,6 @@ import {Confirm} from "notiflix";
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, AngularEditorModule, ModalComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

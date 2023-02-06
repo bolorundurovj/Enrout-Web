@@ -18,8 +18,6 @@ import {PaginationParams} from "@lib/classes/pagination-params";
 
 @Component({
   selector: 'app-document-detail',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, ModalComponent],
   templateUrl: './document-detail.component.html',
   styleUrls: ['./document-detail.component.css']
 })
