@@ -22,6 +22,11 @@ export class DashboardComponent implements OnInit {
   showDialog = false;
   documents: Array<IDocument> = [];
   isLoading = false;
+  isSaving = false;
+  isDeleting = false;
+  isNudging = false;
+  isPublishing = false;
+  isModifying = false;
   formMode: 'new' | 'edit' | 'resolve' = 'new'
   states = DocumentState;
 
@@ -115,7 +120,7 @@ export class DashboardComponent implements OnInit {
       'Yes',
       'No',
       () => {
-        this.isLoading = true;
+        this.isPublishing = true;
         this.doc = doc;
         this._docService.publishDocument(doc.id, {staffId: ''})
           .subscribe((response: IDocument) => {
@@ -124,10 +129,12 @@ export class DashboardComponent implements OnInit {
             } else {
               Notify.failure('An error occurred')
             }
+            this.isPublishing = false;
           }, (error) => {
-            Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+            this.isPublishing = false;
+            Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
           }, () => {
-            this.isLoading = false;
+            this.isPublishing = false;
             this.getDocs()
             this.doc = null!;
           })
@@ -149,7 +156,7 @@ export class DashboardComponent implements OnInit {
       'Yes',
       'No',
       () => {
-        this.isLoading = true;
+        this.isNudging = true;
         this.doc = doc;
         this._docService.sendNudge(doc.id)
           .subscribe((response) => {
@@ -158,10 +165,12 @@ export class DashboardComponent implements OnInit {
             } else {
               Notify.failure('An error occurred')
             }
+            this.isNudging = false;
           }, (error) => {
-            Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+            this.isNudging = false;
+            Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
           }, () => {
-            this.isLoading = false;
+            this.isNudging = false;
             this.getDocs()
             this.doc = null!;
           })
@@ -179,6 +188,7 @@ export class DashboardComponent implements OnInit {
   saveDocument() {
     if (this.docForm.valid) {
       if (this.formMode === 'edit') {
+        this.isModifying = true;
         this._docService.updateDocument(this.doc.id, {...this.docForm.value})
           .subscribe(
             (response) => {
@@ -189,21 +199,22 @@ export class DashboardComponent implements OnInit {
               } else {
                 Notify.failure("An error occurred, please try again")
               }
+              this.isModifying = false;
             },
             (error) => {
-              console.error(error)
+              this.isModifying = false;
               Notify.failure(`${error.error?.error || 'An error occurred'}`);
             },
             () => {
-              this.isLoading = false;
+              this.isModifying = false;
               this.paginate();
               this.docForm.reset();
               this.doc = null!;
               this.formMode = 'new'
             }
           );
-      }
-      else if (this.formMode === 'resolve') {
+      } else if (this.formMode === 'resolve') {
+        this.isModifying = true;
         this._docService.resolveDocument(this.doc.id, {...this.docForm.value})
           .subscribe(
             (response) => {
@@ -214,20 +225,22 @@ export class DashboardComponent implements OnInit {
               } else {
                 Notify.failure("An error occurred, please try again")
               }
+              this.isModifying = false;
             },
             (error) => {
-              console.error(error)
+              this.isModifying = false;
               Notify.failure(`${error.error?.error || 'An error occurred'}`);
             },
             () => {
-              this.isLoading = false;
+              this.isModifying = false;
               this.paginate();
               this.docForm.reset();
               this.doc = null!;
               this.formMode = 'new'
             }
           );
-      }else {
+      } else {
+        this.isSaving = true;
         this._docService.createDocument(this.docForm.value)
           .subscribe(
             (response) => {
@@ -238,13 +251,14 @@ export class DashboardComponent implements OnInit {
               } else {
                 Notify.failure("An error occurred, please try again")
               }
+              this.isSaving = false;
             },
             (error) => {
-              console.error(error)
+              this.isSaving = false;
               Notify.failure(`${error.error?.error || 'An error occurred'}`);
             },
             () => {
-              this.isLoading = false;
+              this.isSaving = false;
               this.paginate();
               this.docForm.reset();
             }
@@ -271,9 +285,10 @@ export class DashboardComponent implements OnInit {
           } else {
             Notify.failure("An error occurred, please try again")
           }
+          this.isLoading = false;
         },
         (error) => {
-          console.error(error)
+          this.isLoading = false;
           Notify.failure(`${error.error?.error || 'An error occurred'}`);
         },
         () => {
@@ -290,7 +305,7 @@ export class DashboardComponent implements OnInit {
       'Yes',
       'No',
       () => {
-        this.isLoading = true;
+        this.isDeleting = true;
         this.doc = doc;
         this._docService.deleteSingleDocument(doc.id)
           .subscribe((response: IDocument) => {
@@ -299,10 +314,12 @@ export class DashboardComponent implements OnInit {
             } else {
               Notify.failure('An error occurred')
             }
+            this.isDeleting = false;
           }, (error) => {
-            Notify.failure(error?.error?.message || error?.error?.error  || 'An error occurred')
+            Notify.failure(error?.error?.message || error?.error?.error || 'An error occurred')
+            this.isDeleting = false;
           }, () => {
-            this.isLoading = false;
+            this.isDeleting = false;
             this.getDocs()
             this.doc = null!;
           })
