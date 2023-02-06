@@ -17,6 +17,8 @@ export class LoginPage implements OnInit {
   loginForm!: FormGroup;
   private _callbackURL: string;
 
+  isLoading = false;
+
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
@@ -33,6 +35,10 @@ export class LoginPage implements OnInit {
       email: [null, [Validators.email, Validators.required]],
       password: [null, [Validators.required]]
     })
+
+    this._authService.isLoggedIn$.subscribe(() => {
+      this.isLoading = false;
+    })
   }
 
   setUserType(type: UserType): void {
@@ -41,10 +47,11 @@ export class LoginPage implements OnInit {
 
   onClickSignIn(): void {
     if (this.loginForm.valid) {
+      this.isLoading = true;
       if (this.loginMode === this.userType.STAFF) {
         this._authService.loginStaff(this.loginForm.value);
       } else {
-        this._authService.loginStudent(this.loginForm.value)
+        this._authService.loginStudent(this.loginForm.value);
       }
     } else {
       Notify.failure('Some data is invalid')

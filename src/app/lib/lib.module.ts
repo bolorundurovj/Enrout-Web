@@ -7,15 +7,16 @@ import {BackdropComponent} from "@lib/components/backdrop/backdrop.component";
 import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from "@lib/components/navbar/navbar.component";
 import {LayoutHorizontalComponent} from "@lib/components/layouts/layout-horizontal/layout-horizontal.component";
+import {SpinnerComponent} from './components/spinner/spinner.component';
 
 
 @NgModule({
-  declarations: [NavbarComponent, FooterComponent, LogoComponent, ModalComponent, BackdropComponent, LayoutHorizontalComponent],
+  declarations: [NavbarComponent, FooterComponent, LogoComponent, ModalComponent, BackdropComponent, LayoutHorizontalComponent, SpinnerComponent],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports: [NavbarComponent, FooterComponent, LogoComponent, ModalComponent, BackdropComponent, LayoutHorizontalComponent],
+  exports: [NavbarComponent, FooterComponent, LogoComponent, ModalComponent, BackdropComponent, LayoutHorizontalComponent, SpinnerComponent],
 })
 export class LibModule {
 }

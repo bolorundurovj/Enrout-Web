@@ -8,6 +8,7 @@ import {ForgotPasswordComponent} from "@pages/auth/forgot-password/forgot-passwo
 import {ResetPasswordComponent} from "@pages/auth/reset-password/reset-password.component";
 import {RouterModule} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {LibModule} from "@lib/lib.module";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AuthRoutingModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LibModule
   ]
 })
 export class AuthModule {
