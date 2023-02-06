@@ -36,6 +36,9 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
     this.title.setTitle('Register')
     this.getDepts()
+    this._authService.isLoggedIn$.subscribe(() => {
+      this.isLoading = false;
+    })
   }
 
   getDepts() {
