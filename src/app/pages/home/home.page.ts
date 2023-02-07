@@ -1,12 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { AppTheme, ThemeService } from '@lib/services/theme';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule, RouterModule],
+  selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.css'],
 })

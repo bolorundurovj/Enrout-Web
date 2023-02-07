@@ -7,6 +7,7 @@ import {
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
+import {storage} from "@lib/utils";
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
@@ -15,7 +16,7 @@ export class JwtInterceptor implements HttpInterceptor {
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
     const isLoggedIn = true;
-    const token = 'ABC';
+    const token = storage.getItem('App/token');
     const isApiUrl = request.url.startsWith(environment.apiUrl);
 
     if (isLoggedIn && isApiUrl) {
