@@ -1,17 +1,5 @@
-<div class="mt-4 flex flex-col">
-  <div class="flex flex-row justify-end items-center mb-4">
-    <!--    <button (click)="showConfirm()" class="btn btn-secondary">-->
-    <!--      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"-->
-    <!--           xmlns="http://www.w3.org/2000/svg">-->
-    <!--        <path-->
-    <!--          d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"-->
-    <!--          stroke-linecap="round"-->
-    <!--          stroke-linejoin="round"/>-->
-    <!--      </svg>-->
-    <!--      <span class="ml-2">Add Document</span>-->
-    <!--    </button>-->
-  </div>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-2">
+<div class="flex flex-col h-full">
+  <div class="flex flex-col relative overflow-x-auto border sm:rounded-lg p-4 h-full">
     <div class="flex items-center justify-between pb-4">
       <div>
         <select
@@ -44,15 +32,6 @@
     <table *ngIf="documents.length > 0" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
-        <th class="p-4" scope="col">
-          <div class="flex items-center">
-            <input
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              id="checkbox-all-search"
-              type="checkbox">
-            <label class="sr-only">checkbox</label>
-          </div>
-        </th>
         <th class="px-6 py-3" scope="col">
           Title
         </th>
@@ -79,15 +58,6 @@
       <tbody>
       <tr *ngFor="let d of documents"
           class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-        <td class="w-4 p-4">
-          <div class="flex items-center">
-            <input
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              id="checkbox-table-search-1"
-              type="checkbox">
-            <label class="sr-only">checkbox</label>
-          </div>
-        </td>
         <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">
           {{d.title}}
         </th>
@@ -109,7 +79,7 @@
         </td>
         <td class="px-6 py-4 flex flex-row">
 
-          <div class="inline-flex rounded-md shadow-sm">
+          <div class="inline-flex rounded-md">
             <button [routerLink]="[d.id]"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     type="button">
@@ -120,7 +90,8 @@
       </tr>
       </tbody>
     </table>
-    <nav *ngIf="documents.length > 0" aria-label="Table navigation" class="flex items-center justify-between pt-4">
+    <nav *ngIf="documents.length > 0" aria-label="Table navigation"
+         class="flex items-center justify-between pt-4 mt-auto">
       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span
         class="font-semibold text-gray-900 dark:text-white">{{(pagination.take * pagination.page) - pagination.take + 1}}
         -{{(pagination.take * pagination.page) < paginationMeta.itemCount ? (pagination.take * pagination.page) : paginationMeta.itemCount}}</span> of <span
@@ -155,12 +126,15 @@
         </button>
       </div>
     </nav>
-    <div *ngIf="documents.length < 1" class="flex flex-col mx-auto mt-6 items-center bg-gray-100 rounded py-8">
+    <div *ngIf="documents.length < 1"
+         class="flex flex-col mx-auto my-auto justify-center mt-6 items-center bg-gray-100 rounded py-8 h-full w-full">
       <div class="bg-blue-200 text-blue-500 rounded-full p-8 w-fit mb-4">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
              xmlns="http://www.w3.org/2000/svg">
-          <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" stroke-linecap="round"
-                stroke-linejoin="round"/>
+          <path
+            d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
         </svg>
       </div>
       <div class="my-2 font-bold text-xl">You're all caught up</div>
