@@ -6,13 +6,15 @@ import {AccessibilityPage} from "@pages/settings/accessibility/accessibility.pag
 import {AccountPage} from "@pages/settings/account/account.page";
 import {AppearancePage} from "@pages/settings/appearance/appearance.page";
 import { SettingsComponent } from './settings/settings.component';
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
   declarations: [AccessibilityPage, AccountPage, AppearancePage, SettingsComponent],
   imports: [
     CommonModule,
-    SettingsRoutingModule
+    SettingsRoutingModule,
+    RouterModule
   ]
 })
 export class SettingsModule { }
