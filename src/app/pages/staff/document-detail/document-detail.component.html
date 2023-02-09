@@ -1,7 +1,7 @@
 <div class="w-full flex flex-col">
   <div class="w-full flex flex-row items-center justify-between mb-4">
-    <div class="font-bold text-xl">{{document.title}}-<span
-      class="text-gray-600 text-lg font-normal">({{document.state}})</span></div>
+    <div class="font-bold text-xl dark:text-white">{{document.title}}-<span
+      class="text-gray-600 text-lg font-normal dark:text-white">({{document.state}})</span></div>
     <div class="ml-auto flex flex-row items-center">
       <button (click)="selectWorkflow()"
               *ngIf="document.workflow === null; else approveBtn;"
