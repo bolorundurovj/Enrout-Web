@@ -22,7 +22,7 @@
         class="cursor-pointer text-xl font-semibold dark:text-white"
         routerLink=""
       >Enrout</a>
-<!--      <a-->
+      <!--      <a-->
       <!--        class="cursor-pointer text-xl font-semibold dark:text-white capitalize"-->
       <!--        routerLink=""-->
       <!--      >Enrout {{user!.role.toLowerCase()}} portal</a>-->
@@ -137,8 +137,8 @@
                   class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                   data-dropdown-toggle="dropdown-2" id="user-menu-button-2" type="button">
             <span class="sr-only">Open user menu</span>
-            <img alt="user photo" class="w-8 h-8 rounded-full"
-                 src="https://flowbite.com/docs/images/people/profile-picture-5.jpg">
+            <img alt="user photo" class="w-8 h-8 rounded-full object-cover"
+                 src="https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
           </button>
         </div>
         <!-- Dropdown menu -->
@@ -175,9 +175,9 @@
   <div class="flex h-full overflow-hidden bg-gray-50 dark:bg-gray-900">
     <flowbite-sidebar extraClass="border-r px-2">
       <flowbite-sidebar-item-group>
-        <flowbite-sidebar-item class="mb-2" *ngFor="let component of components"
-                               [icon]="component.icon"
-                               [link]="component.href">
+        <flowbite-sidebar-item *ngFor="let component of components" [icon]="component.icon"
+                               [link]="component.href"
+                               class="mb-2">
           <span class="ml-2 w-64">{{ component.title }}</span>
         </flowbite-sidebar-item>
       </flowbite-sidebar-item-group>
