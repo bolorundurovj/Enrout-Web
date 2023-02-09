@@ -23,3 +23,10 @@ main {
 app-footer {
   grid-area: footer;
 }
+
+.notif {
+  position: absolute;
+  margin: 0;
+  top: 65px;
+  right: 20px;
+}
