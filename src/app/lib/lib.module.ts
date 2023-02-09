@@ -8,13 +8,15 @@ import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from "@lib/components/navbar/navbar.component";
 import {LayoutHorizontalComponent} from "@lib/components/layouts/layout-horizontal/layout-horizontal.component";
 import {SpinnerComponent} from './components/spinner/spinner.component';
+import {FlowbiteModule} from "flowbite-angular";
 
 
 @NgModule({
   declarations: [NavbarComponent, FooterComponent, LogoComponent, ModalComponent, BackdropComponent, LayoutHorizontalComponent, SpinnerComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FlowbiteModule
   ],
   exports: [NavbarComponent, FooterComponent, LogoComponent, ModalComponent, BackdropComponent, LayoutHorizontalComponent, SpinnerComponent],
 })
