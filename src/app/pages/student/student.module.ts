@@ -8,7 +8,8 @@ import {DashboardComponent} from "@pages/student/dashboard/dashboard.component";
 import {StudentLayoutComponent} from "@pages/student/student-layout/student-layout.component";
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import {LibModule} from "@lib/lib.module";
-import { DocumentsComponent } from './documents/documents.component';
+import {DocumentsComponent} from './documents/documents.component';
+import {NgApexchartsModule} from "ng-apexcharts";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { DocumentsComponent } from './documents/documents.component';
     FormsModule,
     ReactiveFormsModule,
     AngularEditorModule,
-    LibModule
+    LibModule,
+    NgApexchartsModule
   ]
 })
 export class StudentModule {
