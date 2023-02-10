@@ -1,5 +1,39 @@
 
 
+# [2.0.0](https://github.com/bolorundurovj/enrout-ui/compare/1.2.0...2.0.0) (2023-02-10)
+
+
+### Features
+
+* Add Apexcharts ([87b8fa2](https://github.com/bolorundurovj/enrout-ui/commit/87b8fa21c7e50d93cffab2d04a718fd403c63a9e))
+* Add Flowbite ([a313775](https://github.com/bolorundurovj/enrout-ui/commit/a313775d20c300eaa86fea456251b4387f820d37))
+* Add Settings Component ([65deffb](https://github.com/bolorundurovj/enrout-ui/commit/65deffb6916aca77d92088eb1cccd8da04f80755))
+* Add Settings Page ([2b90976](https://github.com/bolorundurovj/enrout-ui/commit/2b90976b7f0ae39e4a3db0ca74d0c6e1faeaca2b))
+* Add Student Dashboard ([3b66f79](https://github.com/bolorundurovj/enrout-ui/commit/3b66f7931595393689dc075d1ef80402ef5b74e2))
+* Prevent Overflow ([5500b73](https://github.com/bolorundurovj/enrout-ui/commit/5500b73e260fe5c83515e4a682832311831b4ba6))
+* Refactor 404 Page ([e106be8](https://github.com/bolorundurovj/enrout-ui/commit/e106be80ca1da4b91b8d33ce0bd37fbb40de2b59))
+* Refactor App Layout ([cb0326e](https://github.com/bolorundurovj/enrout-ui/commit/cb0326e80630b5a9c02ffde69e775aad5ecb78b1))
+* Refactor Auth Service ([3311cd7](https://github.com/bolorundurovj/enrout-ui/commit/3311cd79eb0acd2fe53fce1f3d221b8edacaad31))
+* Refactor Document Detail Page ([1a99b7a](https://github.com/bolorundurovj/enrout-ui/commit/1a99b7a2aa91756914dd1f04768d4ea7ae079e6c))
+* Refactor Layout ([f0249dd](https://github.com/bolorundurovj/enrout-ui/commit/f0249ddfdcd7ca486e1b6608b4b44a514b3481ad))
+* Refactor Lib Module ([19194bd](https://github.com/bolorundurovj/enrout-ui/commit/19194bd7a3357b3ee6d6e590671f96efc9cc5ceb))
+* Refactor Staff Documents ([326660f](https://github.com/bolorundurovj/enrout-ui/commit/326660faef341d85a1c1e5306edc25de08f8184c))
+* Refactor Staff Layout ([4860a01](https://github.com/bolorundurovj/enrout-ui/commit/4860a014e981c54288cc6e5b2b69f9cd496118b8))
+* Refactor Student Dashboard ([b407a30](https://github.com/bolorundurovj/enrout-ui/commit/b407a30dd0f3fbdd030b47c64a1a3fecd2a9fd4f))
+* Refactor Student Layout ([4c15fbe](https://github.com/bolorundurovj/enrout-ui/commit/4c15fbef2c868645c2a447896eae783dfbabd89b))
+* Refactor/Fix Overlay & Sizing Issues ([f1f2f22](https://github.com/bolorundurovj/enrout-ui/commit/f1f2f22bb067a8e58f5bc11c7371fd69326c8a57))
+* **staff:** Setup Staff Dashboard UI ([faf6939](https://github.com/bolorundurovj/enrout-ui/commit/faf69395b698ef7b8946d91dd985d54c73f1c73d))
+* **student:** Setup Student Dashboard UI ([ae4c54c](https://github.com/bolorundurovj/enrout-ui/commit/ae4c54c67964ba82b72d279157ba3bc7bb6b5ce7))
+* Update Modals ([e79fb22](https://github.com/bolorundurovj/enrout-ui/commit/e79fb22d6deaf994fca633796b91f6f70c5b6779))
+* Update Staff Dashboard Cards ([a20f6b6](https://github.com/bolorundurovj/enrout-ui/commit/a20f6b60fa4c3b7d48a6cba1e999aa298294efa8))
+
+
+### Performance Improvements
+
+* Remove Unused Components ([c7f9f39](https://github.com/bolorundurovj/enrout-ui/commit/c7f9f390dd9645656c3853e47b1ea476507a9781))
+* Remove Unused Lib Components ([4da4d38](https://github.com/bolorundurovj/enrout-ui/commit/4da4d38a7c3573801bc58c209cd77bcf418b79bc))
+* Remove Unused Settings Components ([014dd03](https://github.com/bolorundurovj/enrout-ui/commit/014dd0354334281b1a7108bed02da1be05474e92))
+
 # [1.2.0](https://github.com/bolorundurovj/enrout-ui/compare/1.1.0...1.2.0) (2023-02-06)
 
 
