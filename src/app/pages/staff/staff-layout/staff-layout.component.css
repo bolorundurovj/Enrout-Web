@@ -1,0 +1,9 @@
+.max-w {
+  max-width: calc(100vw - 650px) !important;
+}
+
+.sidebar {
+  height: auto !important;
+  min-height: 100vh;
+}
+
