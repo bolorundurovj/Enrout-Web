@@ -1,7 +1,7 @@
 <div class="w-full flex flex-col">
   <div class="w-full flex flex-row items-center justify-between mb-4">
-    <div class="font-bold text-xl">{{document.title}}-<span
-      class="text-gray-600 text-lg font-normal">({{document.state}})</span></div>
+    <div class="font-bold text-xl dark:text-white">{{document.title}}-<span
+      class="text-gray-600 text-lg font-normal dark:text-white">({{document.state}})</span></div>
     <div class="ml-auto flex flex-row items-center">
       <button (click)="selectWorkflow()"
               *ngIf="document.workflow === null; else approveBtn;"
@@ -39,9 +39,9 @@
        id="request"></div>
 </div>
 
-<app-modal [show]="showDialog"
-           [title]="'Select Workflow'">
+<div *ngIf="showDialog" class="w-full absolute inset-0 bg-slate-200 bg-opacity-50">
   <div class="w-1/2 mt-10 mx-auto flex-col bg-white dark:bg-slate-800 dark:text-white p-6 rounded-2xl w-[700px]">
+    <div class="text-xl font-bold mb-2">Select Workflow</div>
     <form [formGroup]="docForm" class="text-left">
       <div class="mb-6">
         <label class="block font-bold mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -82,11 +82,11 @@
     </form>
   </div>
 
-</app-modal>
+</div>
 
-<app-modal [show]="showApprovalDialog"
-           [title]="'Approve Document'">
+<div *ngIf="showApprovalDialog" class="w-full absolute inset-0 bg-slate-200 bg-opacity-50">
   <div class="w-1/2 mt-10 mx-auto flex-col bg-white dark:bg-slate-800 dark:text-white p-6 rounded-2xl w-[700px]">
+    <div class="text-xl font-bold mb-2">Approve Document</div>
     <form [formGroup]="approveForm" class="text-left">
       <div class="mb-6">
         <label class="block font-bold mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -132,4 +132,4 @@
     </form>
   </div>
 
-</app-modal>
+</div>

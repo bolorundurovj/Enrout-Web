@@ -33,6 +33,10 @@ export class AuthService {
     return storage.getItem('App/user')
   }
 
+  get loggedInUserType(): UserType {
+    return storage.getItem('App/user')!.role
+  }
+
   loginStudent(credentials: ILoginPayload): void {
     const authData = {email: credentials.email, password: credentials.password};
     this.http
@@ -45,7 +49,11 @@ export class AuthService {
           if (response) {
             storage.setItem('App/session', response);
             storage.setItem('App/token', response.token.accessToken);
-            storage.setItem('App/user', {...response.user, role: UserType.STUDENT, fullName: `${response.user.firstName} ${response.user.lastName}`})
+            storage.setItem('App/user', {
+              ...response.user,
+              role: UserType.STUDENT,
+              fullName: `${response.user.firstName} ${response.user.lastName}`
+            })
             Notify.success(`Logged in successfully`);
             this.isLoggedIn$.next(true);
             this.router.navigate(['/student']);
@@ -72,7 +80,11 @@ export class AuthService {
           if (response) {
             storage.setItem('App/session', response);
             storage.setItem('App/token', response.token.accessToken);
-            storage.setItem('App/user', {...response.user, role: UserType.STAFF, fullName: `${response.user.firstName} ${response.user.lastName}`})
+            storage.setItem('App/user', {
+              ...response.user,
+              role: UserType.STAFF,
+              fullName: `${response.user.firstName} ${response.user.lastName}`
+            })
             Notify.success(`Logged in successfully`);
             this.isLoggedIn$.next(true);
             this.router.navigate(['/staff']);
@@ -151,5 +163,6 @@ export class AuthService {
     storage.removeItem('App/session');
     storage.removeItem('App/token');
     this.isLoggedIn$.next(false);
+    this.router.navigateByUrl('/auth/login')
   }
 }
