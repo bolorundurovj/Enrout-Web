@@ -1,5 +1,24 @@
 
 
+# [2.1.0](https://github.com/bolorundurovj/enrout-ui/compare/2.0.0...2.1.0) (2023-02-11)
+
+
+### Features
+
+* Add & Setup Firebase ([d14a63d](https://github.com/bolorundurovj/enrout-ui/commit/d14a63d42a804b5c44bf0caf5b81dbd863dcac86))
+* Add & Setup Firebase ([19882e2](https://github.com/bolorundurovj/enrout-ui/commit/19882e28a84a12dbb4ce59758b384559276730ad))
+* Add New Date Pipe for Human Readable Dates (fromNow) ([d761827](https://github.com/bolorundurovj/enrout-ui/commit/d76182712afdbf3b1044af5a912b6884639e3a88))
+* Add Notifications Breadcrumb ([d36f76a](https://github.com/bolorundurovj/enrout-ui/commit/d36f76a75e639ee8349f6eb195c9acaed2f9928e))
+* Display Notifications ([d95e5fa](https://github.com/bolorundurovj/enrout-ui/commit/d95e5fa82a9cf382b45491d5644f7f4e2ac5fd18))
+* Display Notifications ([cba1704](https://github.com/bolorundurovj/enrout-ui/commit/cba1704b2908cc4796cf3ade7cb77c140c3c20d9))
+* Display Notifications for Staff ([f9d23c7](https://github.com/bolorundurovj/enrout-ui/commit/f9d23c767685cbe1099d0a1d817161e5214f17cf))
+* Display Notifications Indicator ([fc276a2](https://github.com/bolorundurovj/enrout-ui/commit/fc276a21a4c7f4be3cec666afa2171ecf58b5b02))
+
+
+### Performance Improvements
+
+* Increase Build Budgets ([1745db8](https://github.com/bolorundurovj/enrout-ui/commit/1745db81b41ba12986f7ec0b4a981e234759468a))
+
 # [2.0.0](https://github.com/bolorundurovj/enrout-ui/compare/1.2.0...2.0.0) (2023-02-10)
 
 

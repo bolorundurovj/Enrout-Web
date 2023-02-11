@@ -1,0 +1,63 @@
+<section class="relative flex items-center justify-center antialiased min-w-screen">
+  <div class="container px-0 mx-auto sm:px-5">
+    <div class="mb-4">
+      <nav aria-label="Breadcrumb" class="flex mb-5">
+        <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">
+          <li class="inline-flex items-center">
+            <a
+              class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"
+              href="#">
+              <svg class="w-5 h-5 mr-2.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path clip-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      fill-rule="evenodd"></path>
+              </svg>
+              <a class="ml-1 text-gray-700 hover:text-primary-600 md:ml-2 dark:text-gray-300 dark:hover:text-white"
+                 href="#">Notifications</a>
+            </div>
+          </li>
+        </ol>
+      </nav>
+      <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Unread Notifications</h1>
+    </div>
+    <div *ngFor="let n of notifications"
+         class="flex-col w-full py-4 mx-auto bg-white dark:bg-slate-800 border-b-2 border-r-2 border-gray-200 dark:border-slate-600 sm:px-4 sm:py-4 md:px-4 sm:rounded-lg sm:shadow-sm md:w-2/3 mb-3">
+      <div class="flex flex-row">
+        <img alt="Avatar" class="object-cover w-12 h-12 border-2 border-gray-300 rounded-full"
+             src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&faces=1&faceindex=1&facepad=2.5&w=500&h=500&q=80">
+        <div class="flex-col mt-1">
+          <div class="flex items-center flex-1 px-4 font-bold leading-tight dark:text-slate-200">{{n.title}}
+            <span
+              class="ml-2 text-xs font-normal text-gray-500 dark:text-slate-200">{{n.formattedDate | fromNow}}</span>
+          </div>
+          <div
+            class="flex-1 px-2 ml-2 text-sm font-medium leading-loose text-gray-600 dark:text-slate-200">{{n.message}}
+          </div>
+          <button (click)="markAsRead(n.id)" class="inline-flex items-center px-1 pt-2 ml-1 flex-column"
+                  title="Mark as read">
+            <svg
+              class="w-6 h-6 ml-2 text-gray-600 cursor-pointer hover:text-gray-900 dark:text-white dark:hover:text-slate-300"
+              fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
