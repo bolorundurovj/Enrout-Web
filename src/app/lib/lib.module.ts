@@ -5,10 +5,11 @@ import {RouterModule} from "@angular/router";
 import {LayoutHorizontalComponent} from "@lib/components/layouts/layout-horizontal/layout-horizontal.component";
 import {SpinnerComponent} from './components/spinner/spinner.component';
 import {FlowbiteModule} from "flowbite-angular";
+import { MomentDatePipe } from './pipes/moment-date.pipe';
 
 
 @NgModule({
-  declarations: [LogoComponent, LayoutHorizontalComponent, SpinnerComponent],
+  declarations: [LogoComponent, LayoutHorizontalComponent, SpinnerComponent, MomentDatePipe],
   imports: [
     CommonModule,
     RouterModule,
