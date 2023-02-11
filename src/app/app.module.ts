@@ -15,10 +15,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule} from "@angular/router";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "@env/environment";
+import { NotificationComponent } from './pages/screens/notification/notification.component';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotificationComponent],
   imports: [
     CommonModule,
     BrowserModule,

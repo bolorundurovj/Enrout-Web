@@ -15,7 +15,7 @@ import { MomentDatePipe } from './pipes/moment-date.pipe';
     RouterModule,
     FlowbiteModule
   ],
-  exports: [LogoComponent, LayoutHorizontalComponent, SpinnerComponent],
+  exports: [LogoComponent, LayoutHorizontalComponent, SpinnerComponent, MomentDatePipe],
 })
 export class LibModule {
 }
