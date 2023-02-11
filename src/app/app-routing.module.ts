@@ -6,6 +6,7 @@ import {StaffGuard} from "@lib/guards/staff.guard";
 import {StudentLayoutComponent} from "@pages/student/student-layout/student-layout.component";
 import {StudentGuard} from "@lib/guards/student.guard";
 import {NotFoundPage} from "@pages/screens/not-found/not-found.page";
+import {NotificationComponent} from "@pages/screens/notification/notification.component";
 
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
     loadChildren: () => (import('@pages/settings/settings.module')).then((m) => m.SettingsModule),
     canLoad: [AuthGuard],
   },
+  {path: 'notifications', component: NotificationComponent},
   {
     path: '**',
     component: NotFoundPage,
