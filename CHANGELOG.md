@@ -1,5 +1,12 @@
 
 
+# [2.2.0](https://github.com/bolorundurovj/enrout-ui/compare/2.1.0...2.2.0) (2023-02-13)
+
+
+### Performance Improvements
+
+* Update API Url ([0e30908](https://github.com/bolorundurovj/enrout-ui/commit/0e30908851fdc9a566f45af318c08d4f55f7bef1))
+
 # [2.1.0](https://github.com/bolorundurovj/enrout-ui/compare/2.0.0...2.1.0) (2023-02-11)
 
 
