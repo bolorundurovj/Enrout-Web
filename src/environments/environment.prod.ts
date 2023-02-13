@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://enrout-api-dev.onrender.com',
+  apiUrl: 'https://enrout-api-dev.herokuapp.com',
   firebase: {
 
     apiKey: "AIzaSyDZC5Tq_2SpM-mz0KW4FxgQ4Db3wFkN3aU",
