@@ -32,20 +32,6 @@ export class DashboardComponent implements OnInit {
     curve: "smooth"
   };
   chartOptions = {
-    series: [
-      {
-        name: "pending",
-        data: [31, 40, 28, 51, 42, 109, 100]
-      },
-      {
-        name: "approved",
-        data: [11, 32, 45, 32, 34, 52, 41]
-      },
-      {
-        name: "declined",
-        data: [21, 15, 0, 50, 12, 30, 80]
-      }
-    ],
     dataLabels: {
       enabled: false
     },
