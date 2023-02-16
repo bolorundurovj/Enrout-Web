@@ -52,7 +52,7 @@
         <div *ngFor="let c of pageData?.submissionsByCategory" class="flex items-center mb-2">
           <div class="w-16 text-sm font-medium dark:text-white mr-3 capitalize">{{c.state}}</div>
           <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-            <div class="bg-primary-600 h-2.5 rounded-full dark:bg-primary-500" style="width: 100%"></div>
+            <div class="bg-primary-600 h-2.5 rounded-full dark:bg-primary-500" [ngStyle]="{ 'width': calcPercent(c.count) + '%' }"></div>
           </div>
         </div>
       </div>

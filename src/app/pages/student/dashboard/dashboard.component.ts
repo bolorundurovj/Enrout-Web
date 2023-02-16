@@ -10,7 +10,7 @@ import {Notify} from "notiflix/build/notiflix-notify-aio";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
   pageData: IStaffDashboardStats = new StaffDashboardStats();
   chart: ApexChart = {
     height: 390,
@@ -69,5 +69,9 @@ export class DashboardComponent implements OnInit{
     }, () => {
       Notify.failure('An error occurred')
     })
+  }
+
+  calcPercent(value: number) {
+    return Number(value / this.pageData.submissions) * 100
   }
 }

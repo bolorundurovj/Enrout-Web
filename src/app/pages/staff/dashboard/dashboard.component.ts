@@ -52,4 +52,8 @@ export class DashboardComponent implements OnInit {
       Notify.failure('An error occurred')
     })
   }
+
+  calcPercent(value: number) {
+    return Number(value / this.pageData.submissions) * 100
+  }
 }
