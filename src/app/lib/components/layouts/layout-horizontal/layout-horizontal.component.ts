@@ -4,7 +4,6 @@ import {AuthService} from "@lib/services";
 import {UserType} from "@lib/enums/user-type";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {INotification} from "@lib/interfaces/inotification";
-import {map, take} from "rxjs";
 
 @Component({
   selector: 'app-layout-horizontal',
@@ -104,12 +103,8 @@ export class LayoutHorizontalComponent {
       .collection('notifications',
         ref => ref.where('isRead', '==', false)
           .where('ownerId', '==', this.user!.id))
-      .valueChanges()
-      .pipe(
-        take(1),
-        map(docs => docs.length)
-      ).subscribe(count => {
-      this.notificationCount = count;
+      .valueChanges().subscribe(data => {
+      this.notificationCount = data.length;
     }, (error) => {
       console.error(error);
     });

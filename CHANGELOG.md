@@ -1,5 +1,16 @@
 
 
+# [2.3.0](https://github.com/bolorundurovj/enrout-ui/compare/2.2.0...2.3.0) (2023-02-16)
+
+
+### Features
+
+* Increment Notification Count In Realtime ([cc3b217](https://github.com/bolorundurovj/enrout-ui/commit/cc3b2174ec6f96eaffde88b865c2e0caf6a6f14a))
+* Update API Url ([d84c4d2](https://github.com/bolorundurovj/enrout-ui/commit/d84c4d28dbcd70031a66672a108aec5a669a1442))
+* Update Subs By Category ([48b3129](https://github.com/bolorundurovj/enrout-ui/commit/48b3129ff1d7d4343dd160e0662a235ea3e241cf))
+* View Staff Dashboard Stats ([5967552](https://github.com/bolorundurovj/enrout-ui/commit/596755215326cef1a356ee8b9b1b46b7d0710c58))
+* View Student Dashboard Stats ([a20dfc0](https://github.com/bolorundurovj/enrout-ui/commit/a20dfc00e04ead9cafd411e911dd462f85b8d08d))
+
 # [2.2.0](https://github.com/bolorundurovj/enrout-ui/compare/2.1.0...2.2.0) (2023-02-13)
 
 

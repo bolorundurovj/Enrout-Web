@@ -1,26 +1,31 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApexChart, ApexStroke, ApexXAxis} from "ng-apexcharts";
+import {IStaffDashboardStats} from "@lib/interfaces/istaff-dashboard-stats";
+import {StaffDashboardStats} from "@lib/classes/StaffDashboardStats";
+import {StudentService} from "@lib/services/student/student.service";
+import {Notify} from "notiflix/build/notiflix-notify-aio";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  pageData: IStaffDashboardStats = new StaffDashboardStats();
   chart: ApexChart = {
     height: 390,
     type: "area"
   };
   xaxis: ApexXAxis = {
-    type: "datetime",
+    type: "category",
     categories: [
-      "2018-09-19T00:00:00.000Z",
-      "2018-09-19T01:30:00.000Z",
-      "2018-09-19T02:30:00.000Z",
-      "2018-09-19T03:30:00.000Z",
-      "2018-09-19T04:30:00.000Z",
-      "2018-09-19T05:30:00.000Z",
-      "2018-09-19T06:30:00.000Z"
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thur",
+      "Fri",
+      "Sat"
     ]
   };
   stroke: ApexStroke = {
@@ -55,19 +60,18 @@ export class DashboardComponent {
     }
   };
 
-  public generateData(baseval: any, count: number, yrange: any) {
-    let i = 0;
-    const series = [];
-    while (i < count) {
-      const x = Math.floor(Math.random() * (750 - 1 + 1)) + 1;
-      const y =
-        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-      const z = Math.floor(Math.random() * (75 - 15 + 1)) + 15;
+  constructor(private readonly studentService: StudentService) {
+  }
 
-      series.push([x, y, z]);
-      baseval += 86400000;
-      i++;
-    }
-    return series;
+  ngOnInit() {
+    this.studentService.retrieveDashboardStats().subscribe((res) => {
+      this.pageData = res;
+    }, () => {
+      Notify.failure('An error occurred')
+    })
+  }
+
+  calcPercent(value: number) {
+    return Number(value / this.pageData.submissions) * 100
   }
 }
