@@ -29,7 +29,6 @@ export class NotificationComponent implements OnInit {
           this.notifications = x.map((a: INotification) => {
             return {...a, formattedDate: a.createdAt.toDate()}
           })
-          console.table(this.notifications)
         },
         (error) => {
           Notify.failure(error);
