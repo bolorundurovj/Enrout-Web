@@ -1,8 +1,8 @@
 <div class="w-full flex flex-col">
-  <div class="w-full flex flex-row items-center justify-between mb-4">
+  <div class="w-full flex flex-col lg:flex-row items-center justify-between mb-4">
     <div class="font-bold text-xl dark:text-white">{{document.title}}-<span
       class="text-gray-600 text-lg font-normal dark:text-white">({{document.state}})</span></div>
-    <div class="ml-auto flex flex-row items-center">
+    <div class="ml-auto flex flex-row items-center flex-wrap mt-2.5 lg:mt-0">
       <button (click)="selectWorkflow()"
               *ngIf="document.workflow === null; else approveBtn;"
               [disabled]="document.state !== states.PENDING"
