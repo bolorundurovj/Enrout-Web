@@ -1,5 +1,7 @@
 
 
+## [2.3.2](https://github.com/bolorundurovj/enrout-ui/compare/2.3.1...2.3.2) (2023-02-18)
+
 ## [2.3.1](https://github.com/bolorundurovj/enrout-ui/compare/2.3.0...2.3.1) (2023-02-17)
 
 
