@@ -1,0 +1,292 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>enrout-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">enrout-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 align="center">Enrout</h1>
+
+<p align="center">
+  <img src="https://img.icons8.com/ios-filled/150/000000/angularjs.png" alt="angular-logo" width="120px" height="120px"/>
+  <br>
+  <i>UDRS is a web-based system built using Angular that provides a platform for students and staff of the university to manage and route documents efficiently. With UDRS, you can easily upload, track, and receive documents within the university's network, making it easier to manage your day-to-day activities.
+</i>
+  <br>
+</p>
+
+<p align="center">
+  <a href="enrout-ui-git-dev-bolorundurovj.vercel.app/"><strong>enrout-ui-git-dev-bolorundurovj.vercel.app/</strong></a>
+  <br>
+</p>
+
+<p align="center">
+  <a href="CONTRIBUTING.md">Contributing Guidelines</a>
+  ·
+  <a href="https://github.com/bolorundurovj/enrout-ui/issues">Submit an Issue</a>
+  <br>
+  <br>
+</p>
+<hr>
+
+<h2 id="️⚗️-key-features">️⚗️ Key Features</h2>
+<ul>
+<li>User authentication for staff and students</li>
+<li>Document upload and management</li>
+<li>Document routing and tracking</li>
+<li>Notifications and alerts for new and pending documents</li>
+<li>Secure document storage and retrieval</li>
+<li>User-friendly interface</li>
+</ul>
+<h2 id="⚗️-technical-features">⚗️ Technical Features</h2>
+<ul>
+<li>Lazy loading</li>
+<li>Standalone components</li>
+<li>OS/Light/Dark modes</li>
+<li>Strongly-typed storage</li>
+<li>TailwindCSS</li>
+</ul>
+<h2 id="🛠️-tweaks">🛠️ Tweaks</h2>
+<ul>
+<li><p>TailwindCSS configuration:</p>
+<p>You can find the <code>tailwind.config.js</code> file in the project root, then you can refer to <a href="https://tailwindcss.com/docs/configuration">https://tailwindcss.com/docs/configuration</a> to learn how to make your own adjustments.</p>
+</li>
+<li><p>Set default theme (first time load)</p>
+<p>Go to <code>src\app\lib\constants.ts</code> and choose the default theme.</p>
+<p>OS preference</p>
+<div><pre class="line-numbers"><code class="language-ts">export const DEFAULT_BASE_THEME: AppTheme = &#39;system&#39; as const;</code></pre></div><p>Light mode</p>
+<div><pre class="line-numbers"><code class="language-ts">export const DEFAULT_BASE_THEME: AppTheme = &#39;light&#39; as const;</code></pre></div><p>Dark mode</p>
+<div><pre class="line-numbers"><code class="language-ts">export const DEFAULT_BASE_THEME: AppTheme = &#39;dark&#39; as const;</code></pre></div></li>
+<li><p>Enable a new local/session storage item</p>
+<p>Go to <code>src\app\lib\utils\storage\storage.types.ts</code> and add a new item name in the <code>StorageObjectType</code> type and a new key value pair in the <code>StorageObjectMap</code> type.</p>
+<p><img src="https://user-images.githubusercontent.com/64181348/173276010-a4b95a63-2fe0-4104-9b09-34eeea5f0025.png" alt="image" class="img-responsive"></p>
+<p>After that, you can use the new item.
+<img src="https://user-images.githubusercontent.com/64181348/173276575-09322722-387d-4c20-95af-fa9915079e3a.png" alt="image" class="img-responsive"></p>
+</li>
+</ul>
+<h2 id="⛩️-project-structure">⛩️ Project structure</h2>
+<div><pre class="line-numbers"><code class="language-console">├───app
+│   ├───lib
+│   │   ├───components
+│   │   │   ├───footer
+│   │   │   ├───layouts
+│   │   │   │   └───layout-horizontal
+│   │   │   ├───logo
+│   │   │   └───navbar
+│   │   ├───guards
+│   │   ├───interceptors
+│   │   ├───interfaces
+│   │   ├───enums
+│   │   ├───services
+│   │   │   ├───auth
+│   │   │   └───theme
+│   │   └───utils
+│   │       └───storage
+│   └───pages
+│       ├───auth
+│       │   ├───login
+│       │   └───register
+│       ├───home
+│       ├───profile
+│       ├───screens
+│       │   └───not-found
+│       └───settings
+│           ├───accessibility
+│           ├───account
+│           └───appearance
+├───assets
+├───environments
+└───theme
+    ├───01-base
+    ├───02-components
+    ├───03-utilities
+    └───tailwindcss</code></pre></div><h2 id="🧙♂️-commands">🧙‍♂️ Commands</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+<th>NPM</th>
+<th>Yarn</th>
+<th>PNPM</th>
+<th>Background command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ng</td>
+<td>See available commands</td>
+<td>npm run ng</td>
+<td>yarn ng</td>
+<td>pnpm ng</td>
+<td>ng</td>
+</tr>
+<tr>
+<td>start</td>
+<td>Run app in development mode</td>
+<td>npm start</td>
+<td>yarn start</td>
+<td>pnpm start</td>
+<td>ng serve</td>
+</tr>
+<tr>
+<td>build</td>
+<td>Build app for production</td>
+<td>npm run build</td>
+<td>yarn build</td>
+<td>pnpm build</td>
+<td>ng build</td>
+</tr>
+<tr>
+<td>watch</td>
+<td>Run build when files change</td>
+<td>npm run watch</td>
+<td>yarn watch</td>
+<td>pnpm watch</td>
+<td>ng build --watch --configuration development</td>
+</tr>
+<tr>
+<td>test</td>
+<td>Run unit tests</td>
+<td>npm run test</td>
+<td>yarn test</td>
+<td>pnpm test</td>
+<td>ng test</td>
+</tr>
+<tr>
+<td>test:run</td>
+<td>Run unit tests with headless browser and without watch mode</td>
+<td>npm run test:run</td>
+<td>yarn test:run</td>
+<td>pnpm test:run</td>
+<td>ng test --watch=false --browsers ChromeHeadless</td>
+</tr>
+<tr>
+<td>lint</td>
+<td>Lint code</td>
+<td>npm run lint</td>
+<td>yarn lint</td>
+<td>pnpm lint</td>
+<td>ng lint</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions to UDRS. If you want to contribute, please follow these steps:</p>
+<ol>
+<li>Fork the UDRS repository.</li>
+<li>Create a new branch for your changes.</li>
+<li>Make the necessary changes.</li>
+<li>Commit your changes and push to your fork.</li>
+<li>Create a pull request to the main UDRS repository.</li>
+</ol>
+<h2 id="support">Support</h2>
+<p>If you encounter any issues while using UDRS, please open a new issue in the UDRS repository. We will respond to your issue as soon as possible.</p>
+<h2 id="license">License</h2>
+<p>UDRS is released under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
