@@ -1,0 +1,1709 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>enrout-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">enrout-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >DocumentService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/lib/services/document/document.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#approveDocument" >approveDocument</a>
+                            </li>
+                            <li>
+                                <a href="#createDocument" >createDocument</a>
+                            </li>
+                            <li>
+                                <a href="#deleteSingleDocument" >deleteSingleDocument</a>
+                            </li>
+                            <li>
+                                <a href="#publishDocument" >publishDocument</a>
+                            </li>
+                            <li>
+                                <a href="#rejectDoc" >rejectDoc</a>
+                            </li>
+                            <li>
+                                <a href="#requestChanges" >requestChanges</a>
+                            </li>
+                            <li>
+                                <a href="#resolveDocument" >resolveDocument</a>
+                            </li>
+                            <li>
+                                <a href="#retrieveDocuments" >retrieveDocuments</a>
+                            </li>
+                            <li>
+                                <a href="#retrieveSingleDocument" >retrieveSingleDocument</a>
+                            </li>
+                            <li>
+                                <a href="#retrieveSingleStaffDocument" >retrieveSingleStaffDocument</a>
+                            </li>
+                            <li>
+                                <a href="#retrieveStaffDocuments" >retrieveStaffDocuments</a>
+                            </li>
+                            <li>
+                                <a href="#sendNudge" >sendNudge</a>
+                            </li>
+                            <li>
+                                <a href="#setWorkflow" >setWorkflow</a>
+                            </li>
+                            <li>
+                                <a href="#updateDocument" >updateDocument</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/lib/services/document/document.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="approveDocument"></a>
+                    <span class="name">
+                        <span ><b>approveDocument</b></span>
+                        <a href="#approveDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>approveDocument(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, comment?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, file?: File)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It takes an id, an optional comment and an optional file, and returns an observable of type IDocument</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the document to be approved</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>comment</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string - The comment to be added to the document.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>file</td>
+                                    <td>
+                                            <code>File</code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The file to be uploaded.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createDocument"></a>
+                    <span class="name">
+                        <span ><b>createDocument</b></span>
+                        <a href="#createDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createDocument(doc: <a href="../interfaces/IDocumentPayload.html" target="_self">IDocumentPayload</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It takes an IDocumentPayload object as an argument, and returns an Observable of type IDocument</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>doc</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDocumentPayload.html" target="_self" >IDocumentPayload</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>IDocumentPayload - this is the document object that we are sending to the server.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteSingleDocument"></a>
+                    <span class="name">
+                        <span ><b>deleteSingleDocument</b></span>
+                        <a href="#deleteSingleDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteSingleDocument(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It takes an id as a parameter, and returns an observable of type IDocument</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the document to be deleted.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="publishDocument"></a>
+                    <span class="name">
+                        <span ><b>publishDocument</b></span>
+                        <a href="#publishDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>publishDocument(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, body: <a href="../interfaces/IPublishDocumentPayload.html" target="_self">IPublishDocumentPayload</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:119</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function takes in an id and a body, and returns an observable of type IDocument</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the document you want to publish</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>body</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPublishDocumentPayload.html" target="_self" >IPublishDocumentPayload</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>IPublishDocumentPayload</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rejectDoc"></a>
+                    <span class="name">
+                        <span ><b>rejectDoc</b></span>
+                        <a href="#rejectDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>rejectDoc(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, comment: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="147"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:147</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It sends a PATCH request to the server, with the ID of the document to reject, and a comment</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the document to be rejected</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>comment</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string - The comment to be added to the document</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestChanges"></a>
+                    <span class="name">
+                        <span ><b>requestChanges</b></span>
+                        <a href="#requestChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>requestChanges(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, comment: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:162</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It sends a PATCH request to the server, with the ID of the document and a comment, and returns an observable of the
+document</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the document you want to request changes for.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>comment</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The comment that the staff member will leave for the student.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resolveDocument"></a>
+                    <span class="name">
+                        <span ><b>resolveDocument</b></span>
+                        <a href="#resolveDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resolveDocument(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, group: <a href="../interfaces/IDocumentPayload.html" target="_self">IDocumentPayload</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>group</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDocumentPayload.html" target="_self" >IDocumentPayload</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retrieveDocuments"></a>
+                    <span class="name">
+                        <span ><b>retrieveDocuments</b></span>
+                        <a href="#retrieveDocuments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>retrieveDocuments(params: <a href="../interfaces/IPaginationParams.html" target="_self">IPaginationParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It takes an object of type <code>IPaginationParams</code> as a parameter, and returns an observable of type
+<code>IPaginatedResponse&lt;IDocument&gt;</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPaginationParams.html" target="_self" >IPaginationParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>IPaginationParams</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;IPaginatedResponse&lt;IDocument&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IPaginatedResponse<IDocument></p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retrieveSingleDocument"></a>
+                    <span class="name">
+                        <span ><b>retrieveSingleDocument</b></span>
+                        <a href="#retrieveSingleDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>retrieveSingleDocument(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It returns an Observable of type IDocument</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>string - the id of the document to retrieve</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retrieveSingleStaffDocument"></a>
+                    <span class="name">
+                        <span ><b>retrieveSingleStaffDocument</b></span>
+                        <a href="#retrieveSingleStaffDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>retrieveSingleStaffDocument(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It returns an Observable of type IDocument, which is a single document object</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the document you want to retrieve.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retrieveStaffDocuments"></a>
+                    <span class="name">
+                        <span ><b>retrieveStaffDocuments</b></span>
+                        <a href="#retrieveStaffDocuments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>retrieveStaffDocuments(params: <a href="../interfaces/IPaginationParams.html" target="_self">IPaginationParams</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It takes an object of type <code>IPaginationParams</code> as a parameter, and returns an observable of type
+<code>IPaginatedResponse&lt;IDocument&gt;</code></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>params</td>
+                                    <td>
+                                                <code><a href="../interfaces/IPaginationParams.html" target="_self" >IPaginationParams</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>IPaginationParams</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;IPaginatedResponse&lt;IDocument&gt;&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IPaginatedResponse<IDocument></p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendNudge"></a>
+                    <span class="name">
+                        <span ><b>sendNudge</b></span>
+                        <a href="#sendNudge"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendNudge(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="133"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:133</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>It sends a PATCH request to the API to update the document with the given ID</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the student to nudge</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setWorkflow"></a>
+                    <span class="name">
+                        <span ><b>setWorkflow</b></span>
+                        <a href="#setWorkflow"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setWorkflow(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, payload: <a href="../interfaces/ISetWorkflowPayload.html" target="_self">ISetWorkflowPayload</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:176</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function takes an id and a payload and returns an observable of type IDocument</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The id of the document you want to set the workflow for.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>payload</td>
+                                    <td>
+                                                <code><a href="../interfaces/ISetWorkflowPayload.html" target="_self" >ISetWorkflowPayload</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>ISetWorkflowPayload</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateDocument"></a>
+                    <span class="name">
+                        <span ><b>updateDocument</b></span>
+                        <a href="#updateDocument"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateDocument(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, group: <a href="../interfaces/IDocumentPayload.html" target="_self">IDocumentPayload</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/lib/services/document/document.service.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This function takes an ID and an IDocumentPayload object and returns an Observable of type IDocument</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>The ID of the document you want to update.</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>group</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDocumentPayload.html" target="_self" >IDocumentPayload</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <ul>
+<li>IDocumentPayload</li>
+</ul>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IDocument.html" target="_self" >Observable&lt;IDocument&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>An observable of type IDocument</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &#x27;@angular/core&#x27;;
+import {HttpClient, HttpParams} from &quot;@angular/common/http&quot;;
+import {environment} from &quot;@env/environment&quot;;
+import {IDocumentPayload} from &quot;@lib/interfaces/idocument-payload&quot;;
+import {IDocument} from &quot;@lib/interfaces/idocument&quot;;
+import {Observable} from &quot;rxjs&quot;;
+import {IPaginationParams} from &quot;@lib/interfaces/ipagination-params&quot;;
+import {IPaginatedResponse} from &quot;@lib/interfaces/ipaginated-response&quot;;
+import {IPublishDocumentPayload} from &quot;@lib/interfaces/ipublish-document-payload&quot;;
+import {ISetWorkflowPayload} from &quot;@lib/interfaces/iset-workflow-payload&quot;;
+
+const studentApiUrl &#x3D; &#x60;${environment.apiUrl}/students/documents&#x60;;
+const staffApiUrl &#x3D; &#x60;${environment.apiUrl}/staff/documents&#x60;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class DocumentService {
+
+  constructor(private http: HttpClient) {
+  }
+
+  /**
+   * It takes an IDocumentPayload object as an argument, and returns an Observable of type IDocument
+   * @param {IDocumentPayload} doc - IDocumentPayload - this is the document object that we are sending to the server.
+   * @returns An observable of type IDocument
+   */
+  createDocument(doc: IDocumentPayload): Observable&lt;IDocument&gt; {
+    return this.http
+      .post&lt;IDocument&gt;(
+        studentApiUrl + &#x27;/&#x27;,
+        doc
+      );
+  }
+
+  /**
+   * It takes an object of type &#x60;IPaginationParams&#x60; as a parameter, and returns an observable of type
+   * &#x60;IPaginatedResponse&lt;IDocument&gt;&#x60;
+   * @param {IPaginationParams} params - IPaginationParams
+   * @returns An observable of type IPaginatedResponse&lt;IDocument&gt;
+   */
+  retrieveDocuments(params: IPaginationParams): Observable&lt;IPaginatedResponse&lt;IDocument&gt;&gt; {
+    const queryParams &#x3D; new HttpParams().set(&#x27;order&#x27;, params.order).set(&#x27;page&#x27;, params.page)
+      .set(&#x27;take&#x27;, params.take)
+    if (params?.q) queryParams.set(&#x27;q&#x27;, params.q)
+
+    return this.http.get&lt;IPaginatedResponse&lt;IDocument&gt;&gt;(studentApiUrl, {params: queryParams})
+  }
+
+  /**
+   * It takes an object of type &#x60;IPaginationParams&#x60; as a parameter, and returns an observable of type
+   * &#x60;IPaginatedResponse&lt;IDocument&gt;&#x60;
+   * @param {IPaginationParams} params - IPaginationParams
+   * @returns An observable of type IPaginatedResponse&lt;IDocument&gt;
+   */
+  retrieveStaffDocuments(params: IPaginationParams): Observable&lt;IPaginatedResponse&lt;IDocument&gt;&gt; {
+    const queryParams &#x3D; new HttpParams().set(&#x27;order&#x27;, params.order).set(&#x27;page&#x27;, params.page)
+      .set(&#x27;take&#x27;, params.take)
+    if (params?.q) queryParams.set(&#x27;q&#x27;, params.q)
+
+    return this.http.get&lt;IPaginatedResponse&lt;IDocument&gt;&gt;(staffApiUrl, {params: queryParams})
+  }
+
+  /**
+   * It returns an Observable of type IDocument
+   * @param {string} id - string - the id of the document to retrieve
+   * @returns An observable of type IDocument
+   */
+  retrieveSingleDocument(id: string): Observable&lt;IDocument&gt; {
+    return this.http.get&lt;IDocument&gt;(&#x60;${studentApiUrl}/${id}&#x60;);
+  }
+
+  /**
+   * It returns an Observable of type IDocument, which is a single document object
+   * @param {string} id - The id of the document you want to retrieve.
+   * @returns An observable of type IDocument
+   */
+  retrieveSingleStaffDocument(id: string): Observable&lt;IDocument&gt; {
+    return this.http.get&lt;IDocument&gt;(&#x60;${staffApiUrl}/${id}&#x60;);
+  }
+
+  /**
+   * It takes an id as a parameter, and returns an observable of type IDocument
+   * @param {string} id - The id of the document to be deleted.
+   * @returns An observable of type IDocument.
+   */
+  deleteSingleDocument(id: string): Observable&lt;IDocument&gt; {
+    return this.http.delete&lt;IDocument&gt;(&#x60;${studentApiUrl}/${id}&#x60;);
+  }
+
+  /**
+   * This function takes an ID and an IDocumentPayload object and returns an Observable of type IDocument
+   * @param {string} id - The ID of the document you want to update.
+   * @param {IDocumentPayload} group - IDocumentPayload
+   * @returns An observable of type IDocument
+   */
+  updateDocument(id: string, group: IDocumentPayload): Observable&lt;IDocument&gt; {
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${studentApiUrl}/${id}&#x60;,
+        group
+      );
+  }
+
+  resolveDocument(id: string, group: IDocumentPayload): Observable&lt;IDocument&gt; {
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${studentApiUrl}/${id}/resolve&#x60;,
+        group
+      );
+  }
+
+  /**
+   * This function takes in an id and a body, and returns an observable of type IDocument
+   * @param {string} id - The id of the document you want to publish
+   * @param {IPublishDocumentPayload} body - IPublishDocumentPayload
+   * @returns An observable of type IDocument
+   */
+  publishDocument(id: string, body: IPublishDocumentPayload): Observable&lt;IDocument&gt; {
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${studentApiUrl}/${id}/publish&#x60;,
+        body
+      );
+  }
+
+
+  /**
+   * It sends a PATCH request to the API to update the document with the given ID
+   * @param {string} id - The id of the student to nudge
+   * @returns An observable of type IDocument
+   */
+  sendNudge(id: string): Observable&lt;IDocument&gt; {
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${studentApiUrl}/${id}/nudge&#x60;,
+        {}
+      );
+  }
+
+  /**
+   * It sends a PATCH request to the server, with the ID of the document to reject, and a comment
+   * @param {string} id - The id of the document to be rejected
+   * @param {string} comment - string - The comment to be added to the document
+   * @returns An observable of type IDocument
+   */
+  rejectDoc(id: string, comment: string): Observable&lt;IDocument&gt; {
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${staffApiUrl}/${id}/reject&#x60;,
+        {comment}
+      );
+  }
+
+  /**
+   * It sends a PATCH request to the server, with the ID of the document and a comment, and returns an observable of the
+   * document
+   * @param {string} id - The id of the document you want to request changes for.
+   * @param {string} comment - The comment that the staff member will leave for the student.
+   * @returns An observable of type IDocument
+   */
+  requestChanges(id: string, comment: string): Observable&lt;IDocument&gt; {
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${staffApiUrl}/${id}/request-changes&#x60;,
+        {comment}
+      );
+  }
+
+  /**
+   * This function takes an id and a payload and returns an observable of type IDocument
+   * @param {string} id - The id of the document you want to set the workflow for.
+   * @param {ISetWorkflowPayload} payload - ISetWorkflowPayload
+   * @returns An observable of type IDocument
+   */
+  setWorkflow(id: string, payload: ISetWorkflowPayload): Observable&lt;IDocument&gt; {
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${staffApiUrl}/${id}/set-workflow&#x60;,
+        payload
+      );
+  }
+
+
+  /**
+   * It takes an id, an optional comment and an optional file, and returns an observable of type IDocument
+   * @param {string} id - The id of the document to be approved
+   * @param {string} [comment] - string - The comment to be added to the document.
+   * @param {File} [file] - The file to be uploaded.
+   * @returns An observable of type IDocument
+   */
+  approveDocument(id: string, comment?: string, file?: File): Observable&lt;IDocument&gt; {
+    const form &#x3D; new FormData();
+    if(comment) form.append(&#x27;comment&#x27;, comment);
+    if(file) form.append(&#x27;document&#x27;, file);
+    return this.http
+      .patch&lt;IDocument&gt;(
+        &#x60;${staffApiUrl}/${id}/approve&#x60;,
+        form
+      );
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'DocumentService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

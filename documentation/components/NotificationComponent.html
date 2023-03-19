@@ -1,0 +1,652 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>enrout-ui documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">enrout-ui documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  NotificationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/screens/notification/notification.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-notification</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./notification.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./notification.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#notifications" >notifications</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#markAsRead" >markAsRead</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, fireStore: AngularFirestore)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/screens/notification/notification.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fireStore</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="markAsRead"></a>
+                    <span class="name">
+                        <span ><b>markAsRead</b></span>
+                        <a href="#markAsRead"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>markAsRead(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/pages/screens/notification/notification.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/pages/screens/notification/notification.component.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notifications"></a>
+                    <span class="name">
+                        <span ><b>notifications</b></span>
+                        <a href="#notifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/INotification.html" target="_self" >INotification[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/pages/screens/notification/notification.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.authService.loggedInUser</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/pages/screens/notification/notification.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {AuthService} from &quot;@lib/services&quot;;
+import {AngularFirestore} from &quot;@angular/fire/compat/firestore&quot;;
+import {INotification} from &quot;@lib/interfaces/inotification&quot;;
+import {Notify} from &quot;notiflix/build/notiflix-notify-aio&quot;;
+
+@Component({
+  selector: &#x27;app-notification&#x27;,
+  templateUrl: &#x27;./notification.component.html&#x27;,
+  styleUrls: [&#x27;./notification.component.css&#x27;]
+})
+export class NotificationComponent implements OnInit {
+  user &#x3D; this.authService.loggedInUser;
+
+  notifications: INotification[] &#x3D; [];
+
+  constructor(private readonly authService: AuthService, private readonly fireStore: AngularFirestore) {
+  }
+
+  ngOnInit(): void {
+    this.fireStore
+      .collection(&#x27;notifications&#x27;,
+        ref &#x3D;&gt; ref.where(&#x27;isRead&#x27;, &#x27;&#x3D;&#x3D;&#x27;, false)
+          .where(&#x27;ownerId&#x27;, &#x27;&#x3D;&#x3D;&#x27;, this.user!.id)
+          .orderBy(&#x27;createdAt&#x27;, &#x27;desc&#x27;))
+      .valueChanges()
+      .subscribe(
+        (x: any[]) &#x3D;&gt; {
+          this.notifications &#x3D; x.map((a: INotification) &#x3D;&gt; {
+            return {...a, formattedDate: a.createdAt.toDate()}
+          })
+        },
+        (error) &#x3D;&gt; {
+          Notify.failure(error);
+        }
+      );
+  }
+
+  markAsRead(id: string) {
+    this.fireStore
+      .collection(&#x27;notifications&#x27;)
+      .doc(id)
+      .update({isRead: true})
+      .then(() &#x3D;&gt; {
+        Notify.success(&quot;Marked as &#x27;Read&#x27;&quot;);
+      })
+      .catch((err) &#x3D;&gt; {
+        Notify.failure(err);
+      });
+  }
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;relative flex items-center justify-center antialiased min-w-screen&quot;&gt;
+  &lt;div class&#x3D;&quot;container px-0 mx-auto sm:px-5&quot;&gt;
+    &lt;div class&#x3D;&quot;mb-4&quot;&gt;
+      &lt;nav aria-label&#x3D;&quot;Breadcrumb&quot; class&#x3D;&quot;flex mb-5&quot;&gt;
+        &lt;ol class&#x3D;&quot;inline-flex items-center space-x-1 text-sm font-medium md:space-x-2&quot;&gt;
+          &lt;li class&#x3D;&quot;inline-flex items-center&quot;&gt;
+            &lt;a
+              class&#x3D;&quot;inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white&quot;
+              href&#x3D;&quot;#&quot;&gt;
+              &lt;svg class&#x3D;&quot;w-5 h-5 mr-2.5&quot; fill&#x3D;&quot;currentColor&quot; viewBox&#x3D;&quot;0 0 20 20&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;&gt;
+                &lt;path
+                  d&#x3D;&quot;M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z&quot;&gt;&lt;/path&gt;
+              &lt;/svg&gt;
+              Home
+            &lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;div class&#x3D;&quot;flex items-center&quot;&gt;
+              &lt;svg class&#x3D;&quot;w-6 h-6 text-gray-400&quot; fill&#x3D;&quot;currentColor&quot; viewBox&#x3D;&quot;0 0 20 20&quot;
+                   xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;&gt;
+                &lt;path clip-rule&#x3D;&quot;evenodd&quot;
+                      d&#x3D;&quot;M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z&quot;
+                      fill-rule&#x3D;&quot;evenodd&quot;&gt;&lt;/path&gt;
+              &lt;/svg&gt;
+              &lt;a class&#x3D;&quot;ml-1 text-gray-700 hover:text-primary-600 md:ml-2 dark:text-gray-300 dark:hover:text-white&quot;
+                 href&#x3D;&quot;#&quot;&gt;Notifications&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/nav&gt;
+      &lt;h1 class&#x3D;&quot;text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white&quot;&gt;Unread Notifications&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div *ngFor&#x3D;&quot;let n of notifications&quot;
+         class&#x3D;&quot;flex-col w-full py-4 mx-auto bg-white dark:bg-slate-800 border-b-2 border-r-2 border-gray-200 dark:border-slate-600 sm:px-4 sm:py-4 md:px-4 sm:rounded-lg sm:shadow-sm md:w-2/3 mb-3&quot;&gt;
+      &lt;div class&#x3D;&quot;flex flex-row&quot;&gt;
+        &lt;img alt&#x3D;&quot;Avatar&quot; class&#x3D;&quot;object-cover w-12 h-12 border-2 border-gray-300 rounded-full&quot;
+             src&#x3D;&quot;https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib&#x3D;rb-1.2.1&amp;ixid&#x3D;eyJhcHBfaWQiOjEyMDd9&amp;auto&#x3D;format&amp;fit&#x3D;facearea&amp;faces&#x3D;1&amp;faceindex&#x3D;1&amp;facepad&#x3D;2.5&amp;w&#x3D;500&amp;h&#x3D;500&amp;q&#x3D;80&quot;&gt;
+        &lt;div class&#x3D;&quot;flex-col mt-1&quot;&gt;
+          &lt;div class&#x3D;&quot;flex items-center flex-1 px-4 font-bold leading-tight dark:text-slate-200&quot;&gt;{{n.title}}
+            &lt;span
+              class&#x3D;&quot;ml-2 text-xs font-normal text-gray-500 dark:text-slate-200&quot;&gt;{{n.formattedDate | fromNow}}&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div
+            class&#x3D;&quot;flex-1 px-2 ml-2 text-sm font-medium leading-loose text-gray-600 dark:text-slate-200&quot;&gt;{{n.message}}
+          &lt;/div&gt;
+          &lt;button (click)&#x3D;&quot;markAsRead(n.id)&quot; class&#x3D;&quot;inline-flex items-center px-1 pt-2 ml-1 flex-column&quot;
+                  title&#x3D;&quot;Mark as read&quot;&gt;
+            &lt;svg
+              class&#x3D;&quot;w-6 h-6 ml-2 text-gray-600 cursor-pointer hover:text-gray-900 dark:text-white dark:hover:text-slate-300&quot;
+              fill&#x3D;&quot;none&quot; stroke&#x3D;&quot;currentColor&quot; stroke-width&#x3D;&quot;1.5&quot;
+              viewBox&#x3D;&quot;0 0 24 24&quot;
+              xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;&gt;
+              &lt;path
+                d&#x3D;&quot;M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z&quot;
+                stroke-linecap&#x3D;&quot;round&quot;
+                stroke-linejoin&#x3D;&quot;round&quot;/&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./notification.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="relative flex items-center justify-center antialiased min-w-screen">  <div class="container px-0 mx-auto sm:px-5">    <div class="mb-4">      <nav aria-label="Breadcrumb" class="flex mb-5">        <ol class="inline-flex items-center space-x-1 text-sm font-medium md:space-x-2">          <li class="inline-flex items-center">            <a              class="inline-flex items-center text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-white"              href="#">              <svg class="w-5 h-5 mr-2.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">                <path                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>              </svg>              Home            </a>          </li>          <li>            <div class="flex items-center">              <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"                   xmlns="http://www.w3.org/2000/svg">                <path clip-rule="evenodd"                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"                      fill-rule="evenodd"></path>              </svg>              <a class="ml-1 text-gray-700 hover:text-primary-600 md:ml-2 dark:text-gray-300 dark:hover:text-white"                 href="#">Notifications</a>            </div>          </li>        </ol>      </nav>      <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Unread Notifications</h1>    </div>    <div *ngFor="let n of notifications"         class="flex-col w-full py-4 mx-auto bg-white dark:bg-slate-800 border-b-2 border-r-2 border-gray-200 dark:border-slate-600 sm:px-4 sm:py-4 md:px-4 sm:rounded-lg sm:shadow-sm md:w-2/3 mb-3">      <div class="flex flex-row">        <img alt="Avatar" class="object-cover w-12 h-12 border-2 border-gray-300 rounded-full"             src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&faces=1&faceindex=1&facepad=2.5&w=500&h=500&q=80">        <div class="flex-col mt-1">          <div class="flex items-center flex-1 px-4 font-bold leading-tight dark:text-slate-200">{{n.title}}            <span              class="ml-2 text-xs font-normal text-gray-500 dark:text-slate-200">{{n.formattedDate | fromNow}}</span>          </div>          <div            class="flex-1 px-2 ml-2 text-sm font-medium leading-loose text-gray-600 dark:text-slate-200">{{n.message}}          </div>          <button (click)="markAsRead(n.id)" class="inline-flex items-center px-1 pt-2 ml-1 flex-column"                  title="Mark as read">            <svg              class="w-6 h-6 ml-2 text-gray-600 cursor-pointer hover:text-gray-900 dark:text-white dark:hover:text-slate-300"              fill="none" stroke="currentColor" stroke-width="1.5"              viewBox="0 0 24 24"              xmlns="http://www.w3.org/2000/svg">              <path                d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"                stroke-linecap="round"                stroke-linejoin="round"/>            </svg>          </button>        </div>      </div>    </div>  </div></section></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DemoPage', 'selector': 'app-demo'},{'name': 'DocumentDetailComponent', 'selector': 'app-document-detail'},{'name': 'DocumentsComponent', 'selector': 'app-documents'},{'name': 'DocumentsComponent', 'selector': 'app-documents'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LayoutHorizontalComponent', 'selector': 'app-layout-horizontal'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundPage', 'selector': ''},{'name': 'NotificationComponent', 'selector': 'app-notification'},{'name': 'ProfilePage', 'selector': ''},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'},{'name': 'StaffLayoutComponent', 'selector': 'app-staff-layout'},{'name': 'StudentLayoutComponent', 'selector': 'app-student-layout'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NotificationComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NotificationComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -31,6 +31,7 @@ export class DocumentDetailComponent implements OnInit {
   selectedWorkflowId: string = null!;
   docForm!: FormGroup;
   approveForm!: FormGroup;
+  selectedFile: File = null!;
 
   constructor(private docService: DocumentService, private _route: ActivatedRoute, private domSanitizer: DomSanitizer, private location: Location, private fb: FormBuilder, private workflowService: WorkflowService) {
   }
@@ -155,7 +156,7 @@ export class DocumentDetailComponent implements OnInit {
 
   approve() {
     if (this.approveForm.valid) {
-      this.docService.approveDocument(this.document.id, this.approveForm.value?.comment, this.approveForm.value?.file)
+      this.docService.approveDocument(this.document.id, this.approveForm.value?.comment, this.selectedFile)
         .subscribe(() => {
           Notify.success('Approved & Forwarded!')
           // this.getDocument(this.document.id)
@@ -169,5 +170,11 @@ export class DocumentDetailComponent implements OnInit {
 
   showApproval() {
     this.showApprovalDialog = true;
+  }
+
+  onFileChange($event: any) {
+    if ($event.target.files.length > 0) {
+      this.selectedFile = $event.target.files[0];
+    }
   }
 }

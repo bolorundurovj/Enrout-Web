@@ -1,5 +1,19 @@
 
 
+# [2.4.0](https://github.com/bolorundurovj/enrout-ui/compare/2.3.2...2.4.0) (2023-03-19)
+
+
+### Bug Fixes
+
+* File Uploads On Document Approval ([2a7da6a](https://github.com/bolorundurovj/enrout-ui/commit/2a7da6a3c4a543069d68764d4bcb5987ff37feed))
+
+
+### Features
+
+* Add Compodoc ([beb982b](https://github.com/bolorundurovj/enrout-ui/commit/beb982bc2c3ccc74ef1457f05758704f8b4defb5))
+* Add Documentation ([aa24342](https://github.com/bolorundurovj/enrout-ui/commit/aa2434271d22d5740fcb4b4e2223cf50bfa4f90c))
+* Download Reviewer Attachments ([c4e1414](https://github.com/bolorundurovj/enrout-ui/commit/c4e1414af4d9429139efbec3923be2338fa10610))
+
 ## [2.3.2](https://github.com/bolorundurovj/enrout-ui/compare/2.3.1...2.3.2) (2023-02-18)
 
 ## [2.3.1](https://github.com/bolorundurovj/enrout-ui/compare/2.3.0...2.3.1) (2023-02-17)

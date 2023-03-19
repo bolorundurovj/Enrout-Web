@@ -111,7 +111,11 @@
             <td class="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap">
               <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
                 <div class="text-base font-semibold text-gray-900 dark:text-white">{{ d.title }}</div>
-                <div class="text-sm font-normal text-gray-500 dark:text-gray-400">{{ d?.reviewerComment }}</div>
+                <div class="text-sm font-normal text-gray-500 dark:text-gray-400 flex flex-row items-center">
+                  <span class="mr-1">{{ d?.reviewerComment }}</span>
+                  <span (click)="downloadFileFromUrl(d?.reviewerAttachment)" *ngIf="d?.reviewerAttachment"
+                        class="text-primary-600 underline cursor-pointer" title="Download Reviewer Attachments">Attachment</span>
+                </div>
               </div>
             </td>
             <td
