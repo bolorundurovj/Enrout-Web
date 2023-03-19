@@ -385,4 +385,10 @@ export class DocumentsComponent implements OnInit {
     this.docForm.controls['description'].setValue(doc.description);
     this.showNewModal = true;
   }
+
+  downloadFileFromUrl(url: string | undefined) {
+    if(url) {
+      window.open(url, '_blank')
+    }
+  }
 }
